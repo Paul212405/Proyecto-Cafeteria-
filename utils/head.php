@@ -5,5 +5,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href="css/estilos.css" rel="stylesheet">-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Heladeria P y C</title>
+    <title class="bg">Heladeria P y C</title>
 </head>
