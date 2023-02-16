@@ -12,12 +12,12 @@
                 <div class="block py-2">
                     <label class=" pr-8">Nombre de usuario o correo electronico</label>
                     <br/>
-                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_usuario" id="">
+                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_usuario">
                 </div>
                 <div class="block py-2">
                     <label class=" pr-8">Contraseña</label>
                     <br/>
-                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="password" name="txt_password" id="">
+                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="password" name="txt_password">
                 </div>
                 <input class="w-full mt-2 h-12 rounded-md bg-pink-800 text-white font-bold hover:bg-pink-800/90" type="submit" value="INGRESAR">
             </form>
