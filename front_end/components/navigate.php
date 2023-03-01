@@ -1,7 +1,7 @@
-<nav class="container sticky -top-1 mx-auto mt-0 lg:mt-5 ">
+<nav class="sticky -top-1 w-full mt-0 lg:mt-5 mx-auto lg:px-10 ">
   <div class="flex items-center justify-between flex-wrap lg:flex-nowrap">
     <!--Sub menu de links-->
-    <div id="menu" class="hidden block w-72 h-50 mr-60 pt-2 px-6 pb-2 lg:mr-0 lg:w-auto lg:h-16 lg:flex lg:items-center bg-white lg:p-6 order-4 lg:order-1">
+    <div id="menu" class="hidden block fixed top-16 w-72 h-50 mr-60 pt-2 px-6 pb-2 lg:mr-0 lg:w-auto lg:h-16 lg:flex lg:items-center bg-white lg:p-6 order-4 lg:order-1 lg:top-auto lg:relative">
       <div class="lg:mt-0 lg:mx-4">
         <a href="#" class="flex justify-start items-center lg:justify-center text-black hover:text-red-900 font-bold text-sm">
           <div><img class="h-6 w-6 mr-2" src="./images/inicio.svg" /></div>
@@ -40,7 +40,7 @@
       </button>
     </div>
     <!--Sub menu de item cuenta-->
-    <div id="cuenta" class="hidden w-72 mr-60 py-6 pl-2 h-16 lg:mr-0 lg:w-auto lg:flex items-center lg:justify-end bg-white order-5 lg:order-3">
+    <div id="cuenta" class="hidden fixed top-56 w-72 mr-60 py-6 pl-2 h-16 lg:mr-0 lg:relative lg:w-auto lg:flex items-center lg:justify-end bg-white order-5 lg:order-3 lg:top-auto">
       <div class="lg:mt-0 mx-4 lg:mx-0">
         <button onclick="activar_login()" class="flex justify-start items-center lg:justify-center text-black hover:text-red-900 font-bold text-sm">
           <div><img class="h-6 w-6 mr-2" src="./images/cuenta-icon.png" /></div>
@@ -63,19 +63,4 @@
   <?php include("login.php") ?>
 </nav>
 <!--Llamando a sus scripts-->
-<script>
-  function activar_menu() {
-    document.querySelector("#menu").classList.toggle("hidden");
-    document.querySelector("#cuenta").classList.toggle("hidden");
-  }
-
-  function activar_login() {
-    document.querySelector("#m-login").classList.toggle("hidden");
-    document.querySelector("#b-login").classList.toggle("hidden");
-  }
-
-  function ocultar_login() {
-    document.querySelector("#m-login").classList.toggle("hidden");
-    document.querySelector("#b-login").classList.toggle("hidden");
-  }
-</script>
+<script src="./scritps/navigate.js"></script>
