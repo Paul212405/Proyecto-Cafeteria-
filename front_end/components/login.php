@@ -12,11 +12,11 @@
             <form action="p_login.php" method="post">
                 <div class="block py-2">
                     <label class=" pr-8">Nombre de usuario o correo electronico</label>
-                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_usuario">
+                    <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_usuario">
                 </div>
                 <div class="block py-2">
                     <label class=" pr-8">Contraseña</label>
-                    <input class="w-full h-12 border-2 border-gray-200 rounded-sm mt-2 p-4 focus:outline-none" type="password" name="txt_password">
+                    <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="password" name="txt_password">
                 </div>
                 <input class="w-full mt-2 h-12 rounded-md bg-blue-800/90 text-white font-bold hover:bg-blue-800/90" type="submit" value="INGRESAR">
             </form>
@@ -30,7 +30,7 @@
         </div>
         <div class="block justify-between w-full p-3 text-center text-sm leading-6 border-b-2 border-b-black/20">
             <p>¿Eres nuevo?</p>
-            <a href="./pages/registro.php" class="text-xl underline underline-offset-8 decoration-2 decoration-blue-800/90 hover:text-blue-900/50">Registrate</a>
+            <a href="./registro.php" class="text-xl underline underline-offset-8 decoration-2 decoration-blue-800/90 hover:text-blue-900/50">Registrate</a>
         </div>
     </div>
 </div>

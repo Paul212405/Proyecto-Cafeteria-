@@ -1,12 +1,12 @@
 <?php
 include_once("utils/head.php");
 ?>
-<?php include("components/navigate.php")?>
-<body class="bg-amber-400">
 
-<div class="w-full bg-red-600 mt-10 h-96">
-
-</div>
-
+<body class="bg-amber-400 overflow-x-hidden">
+    <!--Div creado para posicionar los elementos en altura Z-->
+    <div class="relative">
+        <?php include("components/navigate.php") ?>
+        <?php include_once("components/slider_prin.php") ?>
+    </div>
 </body>
-<?php include("components/footer.php")?>
+<?php include("components/footer.php") ?>
