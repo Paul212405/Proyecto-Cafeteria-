@@ -4,7 +4,7 @@
         <!--Direccion y cuentas-->
         <div class="col-span-1 sm:col-span-1 lg:col-span-4 text-white block p-6 h-full">
             <h4 class=>Logo</h4>
-            <p class="my-3">100% helados ricos y caseros</p>
+            <p class="my-3">100% Postres ricos y caseros</p>
             <div class="flex justify-start items-start ">
                 <img src="./images/direccion.png" class="w-6 h-6" />
                 <p class="mx-2">
@@ -62,7 +62,7 @@
             <div class="flex items-center flex-wrap pr-5">
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        COMBOS
+                        Cafes y Bebidas Calientes
                     </a>
                     <span>
                         0
@@ -70,7 +70,7 @@
                 </div>
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        HELADOS DE CONO
+                        Pasteleria 
                     </a>
                     <span>
                         0
@@ -78,7 +78,7 @@
                 </div>
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        HELADOS DE CREMA
+                        Platos Salados
                     </a>
                     <span>
                         0
@@ -86,7 +86,7 @@
                 </div>
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        HELADOS ARTESANALES
+                        Postres
                     </a>
                     <span>
                         0
@@ -94,7 +94,15 @@
                 </div>
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        POSTRES
+                        Jugos
+                    </a>
+                    <span>
+                        0
+                    </span>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                    <a class="text-white text-decoration-none py-2">
+                        Especiales
                     </a>
                     <span>
                         0

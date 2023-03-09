@@ -55,7 +55,7 @@
             <img class="h-6 w-6 m-auto" src="./images/carrito-icon.png" />
           </div>
           <div class="col-span-1 text-red-900"><span>S/0.00</span></div>
-          <div class="col-span-1 text-xs text-gray-500"><span>0 Helados</span></div>
+          <div class="col-span-1 text-xs text-gray-500"><span>0 Productos</span></div>
         </a></div>
     </div>
   </div>
