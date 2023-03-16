@@ -1,5 +1,8 @@
 <?php
+//Incluye la variable auth por si ya se logeo un usuario
 include_once("utils/head.php");
+include_once("utils/auth.php");
+   
 ?>
 
 <body class="bg-black overflow-x-hidden">
@@ -10,7 +13,7 @@ include_once("utils/head.php");
     </div>
     <div>
         <!--Borde superior de la seccion-->
-        <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-[103%] sm:top-[98%] md:top-[94%] lg:top-[88%] " viewBox="0 0 1440 320">
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-[93%] sm:top-[90%] md:top-[85%] lg:top-[75%] " viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="1" d="M0,96L80,90.7C160,85,320,75,480,106.7C640,139,800,213,960,218.7C1120,224,1280,160,1360,128L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
             </path>
         </svg>

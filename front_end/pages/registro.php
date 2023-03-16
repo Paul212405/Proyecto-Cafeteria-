@@ -4,8 +4,8 @@ include_once("utils/head.php");
 <?php include("components/navigate.php") ?>
 
 <body class="bg-[url('../images/registro_imagen_fondo.png')] bg-cover">
-    <div class="block text-center my-10 text-3xl font-bold">
-        <h1>MI CUENTA</h1>
+    <div class="block text-center my-10 text-3xl pt-16 font-bold">
+        <h1>REGISTRATE</h1>
     </div>
     </div>
     <div class="w-full bg-white">
@@ -43,7 +43,7 @@ include_once("utils/head.php");
                 <!--Bloque de login-->
                 <div class="block w-full sm:w-2/5 ">
                     <p class="text-xl font-bold my-4 text-center">INICIAR SESION</p>
-                    <form action="p_login.php" method="post">
+                    <form action="./../back_end/controladores/p_login.php" method="post">
                         <div class="block py-2">
                             <label class=" pr-8">Nombre de usuario o correo electronico</label>
                             <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_usuario">

@@ -1,1 +1,3 @@
-<?php include("pages/contacto.php") ?>
+<?php 
+include_once("utils/auth.php");
+include("pages/contacto.php") ;

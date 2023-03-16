@@ -1,3 +1,19 @@
+<!--Obteniendo los datos para contar los productos por categoria-->
+<?php
+//Va contar las categorias actuales
+$sql = "SELECT COUNT(*) as cantidad FROM tb_categoria";
+$result = $con->query($sql);
+$r = $result->fetch_array();
+$categorias = [];
+//Voy a recorrer y contar cuanto productos tiene cada categoria y lo almaceno
+for ($i = 1; $i <= $r["cantidad"]; $i++) {
+    $sql = "SELECT COUNT(*) as cantidad FROM tb_producto WHERE id_categoria=$i";
+    $result = $con->query($sql);
+    $r = $result->fetch_array();
+    $categorias[] = $r["cantidad"];
+}
+?>
+
 <!--Footer de mayor informacion-->
 <footer class=" bg-black mx-auto w-full">
     <div class="grid grid-rows-3 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 lg:grid-cols-12 justify-between items-center ">
@@ -6,35 +22,35 @@
             <h4 class=>Logo</h4>
             <p class="my-3">100% Postres ricos y caseros</p>
             <div class="flex justify-start items-start ">
-                <img src="./images/direccion.png" class="w-6 h-6" />
+                <i class="fa fa-route fa-lg text-white"></i>
                 <p class="mx-2">
                     Direccion: 28 de Julio - Huacho, Huaura - Lima
                 </p>
             </div>
             <div class="flex justify-start items-center ">
-                <img src="./images/tel.png" class="w-6 h-6" />
+                <i class="fas fa-phone-alt fa-lg text-white"></i>
                 <a href="tel:+51 973348411" class="text-white mx-2 text-decoration-none mb-2 mt-4">
                     +51 973348411
                 </a>
             </div>
             <div class="flex justify-start items-center ">
-                <img src="./images/correo.png" class="w-6 h-6" />
+                <i class="fas fa-envelope fa-lg text-white"></i>
                 <a href="emirjrmasna@gmail.com" class="text-white text-decoration-none mx-2">
                     emirjrmasna@gmail.com
                 </a>
             </div>
             <div class="flex justify-center items-center mt-5">
                 <a href="#" class="p-3">
-                    <img src="./images/whassatp.png" class="w-6 h-6">
+                    <i class="fab fa-whatsapp fa-lg text-white"></i>
                 </a>
                 <a href="#" class="p-3">
-                    <img src="./images/youtube.png" class="w-6 h-6">
+                    <i class="fab fa-instagram fa-lg text-white"></i>
                 </a>
                 <a href="#" class="p-3">
-                    <img src="./images/instagram.png" class="w-6 h-6">
+                    <i class="fab fa-youtube fa-lg text-white"></i>
                 </a>
                 <a href="#" class="p-3">
-                    <img src="./images/facebook.png" class="w-6 h-6">
+                    <i class="fab fa-facebook fa-lg text-white"></i>
                 </a>
             </div>
         </div>
@@ -65,15 +81,15 @@
                         Cafes y Bebidas Calientes
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[0]; ?>
                     </span>
                 </div>
                 <div class="flex justify-between items-center w-full">
                     <a class="text-white text-decoration-none py-2">
-                        Pasteleria 
+                        Pasteleria
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[1]; ?>
                     </span>
                 </div>
                 <div class="flex justify-between items-center w-full">
@@ -81,7 +97,7 @@
                         Platos Salados
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[2]; ?>
                     </span>
                 </div>
                 <div class="flex justify-between items-center w-full">
@@ -89,7 +105,7 @@
                         Postres
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[3]; ?>
                     </span>
                 </div>
                 <div class="flex justify-between items-center w-full">
@@ -97,7 +113,7 @@
                         Jugos
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[4]; ?>
                     </span>
                 </div>
                 <div class="flex justify-between items-center w-full">
@@ -105,7 +121,7 @@
                         Especiales
                     </a>
                     <span>
-                        0
+                        <?php echo $categorias[5]; ?>
                     </span>
                 </div>
             </div>
