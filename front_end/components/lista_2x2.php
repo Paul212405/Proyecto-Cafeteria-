@@ -12,7 +12,7 @@ include("../../back_end/controladores/p_productos.php");
             <div class="bg-[url('./../Public/images/productos/te_helado.jpg')] block w-full h-80 bg-cover"></div>
             <div class="block p-6 ">
                 <p class="text-2xl font-bold text-center my-3">
-                    <button onclick="quitar_scroll_y()">
+                    <button onclick="quitar_scroll_y(<?php echo $productos['id_producto']?>,<?php echo $c ?>,<?php echo $o ?>)">
                         <?php echo $productos['nombre']; ?>
                     </button></p>
                 <div class="flex justify-around items-center">
@@ -33,16 +33,19 @@ include("../../back_end/controladores/p_productos.php");
                 </div>
                 <p class="text-3xl font-bold text-start text-blue-800 my-3">
                     S/. <?php echo $productos['precio']; ?></p>
+                <form>
                 <div class="flex flex-wrap justify-between items-center mx-auto">
+                    <!--Creamos campos ocultos de los datos a enviar-->
+                    <input type="text" name="id_producto" value="<?php echo $productos['id_producto']?>">
+                    <input type="text" name="precio" value="<?php echo $productos['precio']?>"> 
                     <div class="h-12 w-32">
                         <div class="flex h-10 w-32 bg-transparent mt-1">
                             <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
                         </div>
                     </div>
-                    <button class="bg-yellow-400 w-32 h-12 px-4 py-2 rounded-lg">
-                        Añadir
-                    </button>
+                    <input type="submit" class="bg-yellow-400 cursor-pointer w-32 h-12 px-4 py-2 rounded-lg" value="Añadir">
                 </div>
+                </form>
             </div>
         </div>
     <?php
