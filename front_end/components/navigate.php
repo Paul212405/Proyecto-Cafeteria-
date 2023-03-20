@@ -72,9 +72,19 @@
     </div>
     <!--Sub menu de item carrito-->
     <div class="w-1/3 lg:w-auto h-16 flex justify-end items-center lg:py-6 pr-6 order-3 lg:order-4">
+<<<<<<< HEAD
       <div class="cursor-pointer lg:mx-4" id="contenedor_item_carrito">
         
       </div>
+=======
+      <div class="cursor-pointer lg:mx-4"><button onclick="cargarinterfaz('./components/carrito.php','contenedor_carrito')" class="grid grid-cols-2 grid-rows-2 font-bold text-sm">
+          <div class="col-span-1 row-span-2 flex justify-center items-center">
+            <i class="fas fa-shopping-cart fa-2x m-auto text-gray-400"></i>
+          </div>
+          <div class="col-span-1 text-red-900"><span>S/0.00</span></div>
+          <div class="col-span-1 text-xs text-gray-900"><span>0 Productos</span></div>
+            </button></div>
+>>>>>>> 6e4e6d11f98f21044a26091bbab58cabaa15f3ab
     </div>
   </div>
   <!--Para el menu login-->

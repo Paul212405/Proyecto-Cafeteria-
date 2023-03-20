@@ -42,4 +42,7 @@ function setRating(rating) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6e4e6d11f98f21044a26091bbab58cabaa15f3ab
