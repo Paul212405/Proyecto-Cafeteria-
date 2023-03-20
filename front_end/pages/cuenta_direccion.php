@@ -19,5 +19,5 @@ $r = $result->fetch_array();
         <input class="w-full h-12 border-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_direccion" value="<?php echo $r['direccion_facturacion']; ?>" required>
     </div>
     <!---->
-    <input class="w-auto px-5 mt-2 h-12 rounded-md bg-blue-800/90 text-white font-bold hover:bg-blue-800/90" type="submit" value="ACTUALIZAR DIRECCION FACTURACION">
+    <input class="w-auto px-5 mt-2 h-12 rounded-md bg-blue-800/90 text-white font-bold hover:bg-blue-800/90 cursor-pointer" type="submit" value="ACTUALIZAR DIRECCION FACTURACION">
 </form>

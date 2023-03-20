@@ -2,7 +2,11 @@
 //Incluye la variable auth por si ya se logeo un usuario
 include_once("utils/head.php");
 include_once("utils/auth.php");
-   
+if (isset($_SESSION['tipo'])) {
+    if ($_SESSION['tipo'] == "A") {
+        header("location: Admin/principal.php");
+    }
+}
 ?>
 
 <body class="bg-black overflow-x-hidden">

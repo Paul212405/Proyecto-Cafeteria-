@@ -34,7 +34,9 @@ $sql->execute();
 //Para actualizar usuario
 $usuario = $_POST["txt_usuario"];
 $contra_nueva = $_POST["txt_nueva_contra"];
-if ($contra_nueva != "") {
+$conf = $_POST['txt_act_contra'];
+$con_nueva = $_POST['txt_con_contra'];
+if ($contra_nueva != "" && $conf != "" && $con_nueva != "") {
     $sql = $con->prepare("UPDATE tb_usuario SET nombre = ?, 
    password = ? 
    WHERE id_usuario = ?");

@@ -5,10 +5,10 @@ $sqlpag = "select count(*) as total from tb_producto";
 if ($_GET['c'] != 0) {
     $c= $_GET['c'];
     $categoria = $c;
-    $sql = "SELECT id_producto,nombre,precio,stock FROM tb_producto WHERE id_categoria=$categoria";
+    $sql = "SELECT id_producto,nombre,precio,stock,id_categoria FROM tb_producto WHERE id_categoria=$categoria";
     $sqlpag = $sqlpag . " WHERE id_categoria=$categoria";
 } else {
-    $sql = "SELECT id_producto,nombre,precio,stock FROM tb_producto";
+    $sql = "SELECT id_producto,nombre,precio,stock,id_categoria FROM tb_producto";
     $c = 0;
 }
 //Para ordenar 

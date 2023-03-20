@@ -3,6 +3,8 @@ include("../../back_end/conexion/conexion.php");
 //Aqui se realiza la consulta y filtrado de productos
 include("../../back_end/controladores/p_productos.php");
 ?>
+<!--Llamamos al script que envia los datos al php del detalle del pedido-->
+<script src="./scritps/envio_form_pedido.js"></script>
 <div class="grid grid-rows-1 gap-4">
     <!--Una tarjeta de producto-->
     <?php
@@ -11,9 +13,9 @@ include("../../back_end/controladores/p_productos.php");
         <div class="row-span-1 block lg:flex justify-start gap-8 items-center bg-white rounded-b-lg">
             <div class="bg-[url('./../Public/images/productos/te_helado.jpg')] block w-full lg:w-96 h-80 bg-cover"></div>
             <div class="block p-6 ">
-                <p class="text-2xl font-bold text-left my-3"><a href="#">
+                <p class="text-2xl font-bold text-left my-3"><button onclick="quitar_scroll_y(<?php echo $productos['id_producto']?>,<?php echo $c ?>,<?php echo $o ?>)">
                         <?php echo $productos['nombre']; ?>
-                    </a></p>
+                </button></p>
                 <div class="flex justify-start gap-4 items-center">
                     <p>Sin estrellas</p>
                     <p>(
@@ -32,8 +34,12 @@ include("../../back_end/controladores/p_productos.php");
                 </div>
                 <p class="text-3xl font-bold text-start text-blue-800 my-3">
                     S/. <?php echo $productos['precio']; ?></p>
+                <form id="form<?php echo $productos['id_producto'] ?>">
                 <div class="flex flex-wrap justify-between items-center mx-auto">
-                    <div class="h-12 w-auto mr-5 mb-3">
+                     <!--Creamos campos ocultos de los datos a enviar-->
+                     <input type="hidden" name="id_producto" value="<?php echo $productos['id_producto']?>">
+                    <input type="hidden" name="precio" value="<?php echo $productos['precio']?>">
+                    <div class="h-12 w-auto mr-5 mb-3"> 
                         <div class="flex h-10 w-32 bg-transparent mt-1">
                             <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
                         </div>
@@ -42,6 +48,7 @@ include("../../back_end/controladores/p_productos.php");
                         Añadir
                     </button>
                 </div>
+                </form>
             </div>
         </div>
     <?php

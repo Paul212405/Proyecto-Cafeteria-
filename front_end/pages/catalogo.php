@@ -38,7 +38,7 @@ if (isset($_GET['o'])) {
 <script>
     //Evento que se activa al cargar la pagina
     window.addEventListener('load', function() {
-        cargarinterfaz('./components/lista_2x2.php?c=<?php if(isset($_GET['i'])){echo $_GET['i'];}else{echo 0;}?>&o=<?php echo $o?>', 'contenedor_productos')
+        cargarinterfaz('./components/lista_2x2.php?c=<?php echo $i?>&o=<?php echo $o?>', 'contenedor_productos')
     });
 </script>
 <div id="contenedor_producto">
