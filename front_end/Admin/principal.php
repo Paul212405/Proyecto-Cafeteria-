@@ -1,14 +1,18 @@
 <?php
 //Incluye la variable auth por si ya se logeo un usuario
-include_once("../utils/head.php");
+include_once("utils/head.php");
 include("../../back_end/conexion/seguridad.php");
 //Pregunta si es admin
-echo $_SESSION['tipo'];
 if ($_SESSION['tipo'] != "A") {
     header("location: ../index.php");
 }
 ?>
-
-<body class="bg-red-600">
-
+<script src="./js/interfaz_admin.js"></script>
+<body class="bg-white ">
+    <div class="block lg:flex justify-start items-start ">
+        <?php include("components/navigate.php"); ?>
+        <div id="contenedor_admin" class="block grow max-lg:w-full">
+            
+        </div>
+    </div>
 </body>

@@ -77,7 +77,7 @@ if (isset($_GET['o'])) {
                         </button>
                         <li>
                             <!--Sub menu para ordenar segun desea el usuario-->
-                            <ul class="text-start leading-8 hidden absolute" id="ordenar">
+                            <ul class="text-start leading-8 hidden absolute transition-all duration-1000" id="ordenar">
                                 <li class="bg-white hover:bg-gray-100 hover:text-blue-600 px-5 cursor-pointer"><a href="?c=<?php echo $categoria;?>&n=<?php echo $n;?>&i=<?php echo $i;?>&o=1">Menor Precio</a></li>
                                 <li class="bg-white hover:bg-gray-100 hover:text-blue-600 px-5 cursor-pointer"><a href="?c=<?php echo $categoria;?>&n=<?php echo $n;?>&i=<?php echo $i;?>&o=2">Mayor Precio</a></li>
                                 <li class="bg-white hover:bg-gray-100 hover:text-blue-600 px-5 cursor-pointer">Mas Populares</li>

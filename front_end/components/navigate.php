@@ -83,10 +83,7 @@
     include("login.php");
   }
   ?>
-  <!--Para el carrito
-  <?php
-    //include("carrito.php");
-  ?>-->
+  <!--Para el carrito-->
 </nav>
 <div id="contenedor_carrito">
 
