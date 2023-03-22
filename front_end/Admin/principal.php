@@ -8,10 +8,10 @@ if ($_SESSION['tipo'] != "A") {
 }
 ?>
 <script src="./js/interfaz_admin.js"></script>
-<body class="bg-white ">
-    <div class="block lg:flex justify-start items-start ">
+<body class="bg-slate-200 ">
+    <div class="block lg:flex justify-start items-start absolute top-0 left-0 right-0">
         <?php include("components/navigate.php"); ?>
-        <div id="contenedor_admin" class="block grow max-lg:w-full">
+        <div id="contenedor_admin" class="z-0 block grow max-lg:w-full">
             
         </div>
     </div>

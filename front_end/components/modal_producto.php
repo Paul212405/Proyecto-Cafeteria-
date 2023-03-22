@@ -49,7 +49,7 @@ $categoria = $result->fetch_array();
         </div>
         <div class="flex items-start flex-wrap w-full my-4 px-4">
             <div class="w-full lg:flex-1 lg:pr-10">
-                <div class="bg-[url('./../Public/images/productos/te_helado.jpg')] block w-full h-80 bg-cover"></div>
+                <div class="bg-[url('./../Public/images/productos/producto_<?php echo $id_producto?>.jpg')] block w-full h-80 bg-cover"></div>
             </div>
             <div class="lg:flex-1 block">
                 <!--Sub menu-->

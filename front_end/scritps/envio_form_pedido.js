@@ -1,24 +1,20 @@
 //Funcion jquery para enviar los datos del form registrar sin actualizar la ventana
 //Para enviar un producto al carrito generado inicalmente x el cliente
 $(document).ready(function () {
-  $("form").submit(function (event) {
+  $('form').submit(function (event) {
     event.preventDefault(); // evita el comportamiento predeterminado del formulario
-    var Data = $(this).serialize(); // obtiene los datos del formulario
-    // Itera sobre los datos del formulario y obtiene los valores de cada campo
-    var datos_test = $(this).serializeArray();
-    var datos = {};
-    $.each(datos_test, function (index, field) {
-      datos[field.name] = field.value;
-    });
+    var Data =  new FormData(this); // obtiene los datos del formulario
+    var form = $(this) //Guardamos una referencia del formulario
     $.ajax({
       type: "POST",
       url: "./../back_end/controladores/p_detalle_pedido.php",
       data: Data,
+      processData: false,
+      contentType: false,//Para el caso de FormData se requiere colocar estos valores a false
       success: function (response) {
         //Pedido registrado 
-        //Para reinicar el formulario los valores a 0
+        form.get(0).reset(); // reseteamos el formulario actual
         cargarinterfaz('./components/item_carrito.php', 'contenedor_item_carrito');
-        $("form")[0].reset();
       },
       error: function (xhr, status, error) {
         alert("No se ha podido procesar su pedido");

@@ -3,7 +3,7 @@
         document.getElementById("menu_mantenimiento").classList.toggle("hidden");
     }
 </script>
-<div class="transition-all duration-700 max-lg:flex max-lg:justify-between max-lg:items-center lg:w-72 overflow-y-hidden lg:overflow-y-auto overflow-x-hidden w-full h-16 pb-3 lg:h-full bg-black lg:max-h-screen sticky lg:fixed lg:top-0 -top-1 lg:left-0">
+<div class="z-20 transition-all duration-700 max-lg:flex max-lg:justify-between max-lg:items-center lg:w-72 overflow-y-hidden lg:overflow-y-auto overflow-x-hidden w-full h-16 pb-3 lg:h-full bg-black lg:max-h-screen sticky lg:fixed lg:top-0 -top-1 lg:left-0">
     <div class="max-sm:hidden px-3 pt-2 lg:pt-8">
         <div class="flex items-center justify-center">
             <!--Logo de empresa-->
@@ -47,7 +47,7 @@
                     </button>
                 </div>
                 <div class="pt-2 pl-4">
-                    <ul id="menu_mantenimiento" class="hidden block transition-all duration-1000 max-lg:fixed px-2 max-lg:pb-4 text-gray-500 lg:border-l border-gray-700 max-lg:bg-black">
+                    <ul id="menu_mantenimiento" class="hidden block z-50 transition-all duration-1000 max-lg:fixed px-2 max-lg:pb-4 text-gray-500 lg:border-l border-gray-700 max-lg:bg-black">
                         <li class="cursor-pointer">
                             <button onclick="cargarinterfaz('./paginas/usuario.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Usuarios</button>
                         </li>
@@ -65,9 +65,6 @@
                         </li>
                         <li>
                             <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Pedidos</button>
-                        </li>
-                        <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Cerrar Session</button>
                         </li>
                     </ul>
                 </div>
@@ -91,6 +88,6 @@
         <div class="flex items-center pl-2 pointer-events-none">
             <i class="fa fa-power-off"></i>
         </div>
-        <button class="text-left inline-block w-full lg:py-2 lg:pl-2  ">Cerrar Sesion</button>
+        <a href="./../../back_end/conexion/cerrarsesion.php" class="text-left inline-block w-full lg:py-2 lg:pl-2  ">Cerrar Sesion</a>
     </div>
 </div>

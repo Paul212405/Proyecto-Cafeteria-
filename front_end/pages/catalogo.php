@@ -122,5 +122,6 @@ if (isset($_GET['o'])) {
                     <!--Aqui mediante javascript se incluiran nuestros productos-->
                 </div>
             </div>
+        </div>
 </body>
 <?php include("components/footer.php") ?>

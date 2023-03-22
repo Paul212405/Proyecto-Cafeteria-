@@ -15,8 +15,8 @@ for ($i = 1; $i <= $r["cantidad"]; $i++) {
 ?>
 
 <!--Footer de mayor informacion-->
-<footer class=" bg-black mx-auto w-full">
-    <div class="grid grid-rows-3 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 lg:grid-cols-12 justify-between items-center ">
+<footer class=" bg-black/20 mx-auto w-full">
+    <div class="bg-[url('./../Public/images/negocio/footer.png')]  bg-cover grid grid-rows-3 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 lg:grid-cols-12 justify-between items-center ">
         <!--Direccion y cuentas-->
         <div class="col-span-1 sm:col-span-1 lg:col-span-4 text-white block p-6 h-full">
             <h4 class=>Logo</h4>

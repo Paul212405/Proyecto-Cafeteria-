@@ -17,3 +17,17 @@ function cargarinterfaz(url, contenedor) {
     $("#" + contenedor).html(data);
   });
 }
+//Funcion para enviar la peticion sin un formulario
+function eliminar_detalle_pedido(datos, metodo, url, error) {
+  $.ajax({
+    url: url,
+    type: metodo,
+    data: datos,
+    success: actualizar_carrito(),
+    error: actualizar_carrito(),
+  });
+}
+function actualizar_carrito() {
+  cargarinterfaz("./components/item_carrito.php", "contenedor_item_carrito");
+  cargarinterfaz("./components/carrito.php", "contenedor_carrito");
+}

@@ -3,8 +3,8 @@ include_once("utils/head.php");
 ?>
 <?php include("components/navigate.php") ?>
 
-<body class="bg-[url('https://www.xtrafondos.com/wallpapers/resized/paisaje-digital-en-atardecer-5846.jpg?s=large')] bg-cover">
-    <div class="block text-center my-10 text-3xl pt-16 font-bold">
+<body class="bg-[url('./../Public/images/negocio/contacto.png')] bg-cover">
+    <div class="block text-center my-10 text-3xl pt-16 font-bold text-white">
         <h1>CONTACTENOS</h1>
     </div>
     </div>

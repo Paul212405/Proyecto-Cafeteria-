@@ -11,7 +11,7 @@ include("../../back_end/controladores/p_productos.php");
     while ($productos = $result->fetch_array()) {
     ?>
         <div class=" block col-span-1 bg-white rounded-b-lg">
-            <div class="bg-[url('./../Public/images/productos/te_helado.jpg')] block w-full h-52 sm:h-40 bg-cover" alt="slider_01"></div>
+            <div class="bg-[url('./../Public/images/productos/producto_<?php echo $productos['id_producto']?>.jpg')] block w-full h-52 sm:h-40 bg-cover" alt="slider_01"></div>
             <div class="block p-6 ">
                 <p class="text-lg lg:text-sm font-bold text-center my-3"><button onclick="quitar_scroll_y(<?php echo $productos['id_producto']?>,<?php echo $c ?>,<?php echo $o ?>)">
                         <?php echo $productos['nombre']; ?>

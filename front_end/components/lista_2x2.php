@@ -11,7 +11,7 @@ include("../../back_end/controladores/p_productos.php");
     while ($productos = $result->fetch_array()) {
     ?>
         <div class=" block col-span-1 bg-white rounded-b-lg">
-            <div class="bg-[url('./../Public/images/productos/te_helado.jpg')] block w-full h-80 bg-cover"></div>
+            <div class="bg-[url('./../Public/images/productos/producto_<?php echo $productos['id_producto']?>.jpg')] block w-full h-80 bg-cover"></div>
             <div class="block p-6 ">
                 <p class="text-2xl font-bold text-center my-3">
                     <button onclick="quitar_scroll_y(<?php echo $productos['id_producto']?>,<?php echo $c ?>,<?php echo $o ?>)">
@@ -45,7 +45,7 @@ include("../../back_end/controladores/p_productos.php");
                             <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
                         </div>
                     </div>
-                    <input type="submit" class="bg-yellow-400 cursor-pointer w-32 h-12 px-4 py-2 rounded-lg" value="Añadir">
+                    <input type="submit" class="bg-blue-900 text-white font-semibold hover:bg-blue-900/80 transition-all duration-700 cursor-pointer w-32 h-12 px-4 py-2 rounded-lg" value="Añadir">
                 </div>
                 </form>
             </div>

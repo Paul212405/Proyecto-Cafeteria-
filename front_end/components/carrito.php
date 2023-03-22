@@ -4,7 +4,7 @@ include("../../back_end/conexion/auth.php");
 //Cargamos el pedido actual
 $pedido =  $_SESSION['pedido'];
 if($pedido != 0){
-    $sql = "SELECT pe.total, po.nombre,depe.cantidad,po.precio,depe.sub_total FROM tb_pedido pe inner join detalle_pedido depe on pe.id_pedido = depe.id_pedido inner join tb_producto po on depe.id_producto = po.id_producto WHERE pe.id_pedido = $pedido";
+    $sql = "SELECT depe.id_det_pedido,pe.total,po.id_producto, po.nombre,SUM(depe.cantidad) as cantidad,po.precio,SUM(depe.sub_total) as sub_total FROM tb_pedido pe inner join detalle_pedido depe on pe.id_pedido = depe.id_pedido inner join tb_producto po on depe.id_producto = po.id_producto WHERE pe.id_pedido = $pedido GROUP BY po.id_producto,po.nombre";
     $result=$con->query($sql);
     $total = 0;
 }
@@ -27,13 +27,15 @@ if($pedido != 0){
                     $total = $carrito['total'];
             ?>
             <div class="flex justify-start pb-2 gap-3 items-center mb-3 border-dashed border-b-[1px] border-b-black">
-                <img class="w-16 h-16 rounded-full" src="./../Public/images/productos/te_helado.jpg">
+                <img class="w-16 h-16 rounded-full" src="./../Public/images/productos/producto_<?php echo $carrito['id_producto']?>.jpg">
                 <div class="block grow text-xs">
                     <div class="flex justify-between items-center">
                         <p class="font-bold text-center text-blue-800">
                             <?php echo $carrito['nombre']?>
                         </p>
-                        <button><i class="fas fa-window-close fa-sm"></i></button>
+                        <button onclick="eliminar_detalle_pedido({detalle: <?php  echo $carrito['id_det_pedido']?>},'POST', './../back_end/controladores/p_eliminar_detalle_pedido.php')">
+                            <i class="fas fa-window-close fa-sm"></i>
+                        </button>
                     </div>
                     <div class="flex justify-between items-center">
                         <p class="font-bold">Cantidad:</p>
