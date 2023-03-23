@@ -9,19 +9,15 @@ $sql = "SELECT * FROM tb_producto WHERE id_producto=$id_producto";
 $result = $con->query($sql);
 $producto = $result->fetch_array();
 //Buscamos sus datos de valoracion
-$sql = "SELECT COUNT(*) as total FROM tb_testimonio WHERE id_producto=$id_producto";
-$result = $con->query($sql);
-$valoracion = $result->fetch_array();
+//Buscamos sus datos de valoracion
+$sql = "SELECT ROUND(AVG(valoracion)) as media,COUNT(id_testimonio) as total FROM tb_testimonio WHERE id_producto=$id_producto";
+$resultado = $con->query($sql);
+$valoracion = $resultado->fetch_array();
 $media_valoraciones = 0;
+$total_testi = 0;
 if ($valoracion != null) {
-    $total_testi = $valoracion['total'];
-    //Obtener la media de valoraciones
-    $sql = "SELECT sum(valoracion) as suma FROM tb_testimonio WHERE id_producto=$id_producto";
-    $result = $con->query($sql);
-    $suma = $result->fetch_array();
-    if ($total_testi != 0) {
-        $media_valoraciones = ceil($suma['suma'] / $total_testi);
-    }
+$media_valoraciones = $valoracion['media'];
+$total_testi = $valoracion['total'];
 }
 //Para el enlace de categoria
 $sql = "SELECT count(po.id_producto) as cantidad,ca.nombre,ca.id_categoria FROM tb_categoria ca INNER JOIN tb_producto po on ca.id_categoria=po.id_categoria WHERE po.id_producto=$id_producto group by ca.nombre,ca.id_categoria";
@@ -34,6 +30,8 @@ $categoria = $result->fetch_array();
         color: gold;
     }
 </style>
+<!--Para llamar al script de envio de un pedido-->
+<script src="./scritps/envio_pedido_modal.js"></script>
 <!--Llamar al jquery que llama las acciones de enviar formularios guardar testimonio-->
 <script src="./scritps/envio_forms_testimio.js"></script>
 <div id="producto-in" class="bg-black/70 z-10 opacity-100 min-h-screen w-full fixed top-0 left-0 right-0">
@@ -95,16 +93,19 @@ $categoria = $result->fetch_array();
                 <p class="text-left text-xl mb-4 font-semibold">
                     <?php echo $producto['stock'] ?> unidades
                 </p>
+                <form id="form_modal">
                 <div class="flex justify-start items-center gap-5 mx-auto">
+                    <!--Creamos campos ocultos de los datos a enviar-->
+                    <input type="hidden" name="id_producto" value="<?php echo $id_producto?>">
+                    <input type="hidden" name="precio" value="<?php echo  $producto['precio']?>"> 
                     <div class="h-12 w-24">
                         <div class="flex h-10 w-24 bg-transparent mt-1">
                             <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
                         </div>
                     </div>
-                    <button class="bg-blue-900 text-white w-32 h-12 px-4 py-2 rounded-lg">
-                        Añadir
-                    </button>
+                    <input type="submit" class="bg-blue-900 cursor-pointer text-white w-32 h-12 px-4 py-2 rounded-lg" value="Añadir">
                 </div>
+                </form>
             </div>
         </div>
         <!--Menu de valoraciones y descripcion-->

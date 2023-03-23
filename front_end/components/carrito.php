@@ -33,7 +33,7 @@ if($pedido != 0){
                         <p class="font-bold text-center text-blue-800">
                             <?php echo $carrito['nombre']?>
                         </p>
-                        <button onclick="eliminar_detalle_pedido({detalle: <?php  echo $carrito['id_det_pedido']?>},'POST', './../back_end/controladores/p_eliminar_detalle_pedido.php')">
+                        <button onclick="eliminar_detalle_pedido({pedido: <?php  echo $pedido?>,producto:<?php echo $carrito['id_producto']?>},'POST', './../back_end/controladores/p_eliminar_detalle_pedido.php')">
                             <i class="fas fa-window-close fa-sm"></i>
                         </button>
                     </div>

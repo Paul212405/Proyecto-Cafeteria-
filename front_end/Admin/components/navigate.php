@@ -8,7 +8,7 @@
         <div class="flex items-center justify-center">
             <!--Logo de empresa-->
             <a href="">
-                <img src="./../../Public/images/productos/te_helado.jpg" class="w-12 h-12">
+                <img src="./../../Public/images/productos/producto_1.jpg" class="w-12 h-12">
             </a>
         </div>
     </div>
@@ -49,7 +49,7 @@
                 <div class="pt-2 pl-4">
                     <ul id="menu_mantenimiento" class="hidden block z-50 transition-all duration-1000 max-lg:fixed px-2 max-lg:pb-4 text-gray-500 lg:border-l border-gray-700 max-lg:bg-black">
                         <li class="cursor-pointer">
-                            <button onclick="cargarinterfaz('./paginas/usuario.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Usuarios</button>
+                            <button onclick="cargarcomponente('./paginas/usuario.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Usuarios</button>
                         </li>
                         <li>
                             <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Clientes</button>

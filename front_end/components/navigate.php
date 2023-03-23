@@ -7,7 +7,7 @@
 <nav class="fixed -top-1 z-10 w-full mt-0 lg:mt-5 mx-auto lg:px-10 ">
   <div class="flex items-center justify-between flex-wrap shadow-md bg-white shadow-gray-600 lg:flex-nowrap">
     <!--Sub menu de links-->
-    <div id="menu" class="hidden fixed w-72 top-14 bg-white sm:top-16 h-64 mr-60 pt-2 px-6 pb-2 lg:mr-0 lg:w-auto lg:h-16 lg:flex lg:items-center lg:p-6 order-4 lg:order-1 lg:top-auto lg:relative">
+    <div id="menu" class="hidden max-lg:shadow-xl fixed w-72 top-14 bg-white sm:top-16 h-64 mr-60 pt-2 px-6 pb-2 lg:mr-0 lg:w-auto lg:h-16 lg:flex lg:items-center lg:p-6 order-4 lg:order-1 lg:top-auto lg:relative">
       <div class="lg:mt-0 lg:mx-4">
         <a href="./index.php" class="flex justify-start items-center lg:justify-center text-black hover:text-red-900 font-bold text-sm">
           <div><i class="fas fa-home fa-lg mr-2"></i></div>

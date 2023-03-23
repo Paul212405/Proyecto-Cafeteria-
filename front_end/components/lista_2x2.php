@@ -18,10 +18,36 @@ include("../../back_end/controladores/p_productos.php");
                         <?php echo $productos['nombre']; ?>
                     </button></p>
                 <div class="flex justify-around items-center">
-                    <p>Sin estrellas</p>
+                    <p>
+                        <!--Menu de estrellas pero para mostrar la valoracion promedio-->
+                    <div class="flex justify-start gap-2 items-center mr-3">
+                        <div class="pb-1">
+                            <?php
+                            $id = $productos['id_producto'];
+                            //Buscamos sus datos de valoracion
+                            $sql = "SELECT ROUND(AVG(valoracion)) as media FROM tb_testimonio WHERE id_producto=$id";
+                            $resultado = $con->query($sql);
+                            $valoracion = $resultado->fetch_array();
+                            $media_valoraciones = 0;
+                            if ($valoracion != null) {
+                            $media_valoraciones = $valoracion['media'];
+                            }
+                            //Va imprimir la cantidad de estrellas correspondientes
+                            if($media_valoraciones>0){
+                            for ($i = 0; $i < $media_valoraciones; $i++) {
+                            ?>
+                                <label class="text-2xl mr-2 text-yellow-500">&#9733;</label>
+                            <?php
+                            }
+                            }else{
+                                echo "Sin reseñas";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    </p>
                     <p>(
                         <?php
-                        $id = $productos['id_producto'];
                         $sql = "SELECT COUNT(*) as total FROM tb_testimonio WHERE id_producto=$id";
                         $resultado = $con->query($sql);
                         $valoracion = $resultado->fetch_array();

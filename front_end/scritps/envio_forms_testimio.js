@@ -19,7 +19,7 @@ $(document).ready(function () {
       success: function (response) {
         alert("Testimonio registrado correctamente");
         setTimeout(function () {
-          // código que se ejecutará después de 5 segundos 
+          // código que se ejecutará después de 1 segundos 
           cargarinterfaz(
             "./components/modal_producto.php?p=" + datos.id_producto+"&c="+datos.c+"&o="+datos.o,
             "contenedor_producto"

@@ -2,11 +2,13 @@
 include("../conexion/conexion.php");
 include("../conexion/seguridad.php");
 //Recibiendo datos
-$id_detalle = $_POST['detalle'];
-$sql = $con->prepare("DELETE FROM detalle_pedido WHERE id_det_pedido = ?");
+$id_detalle = $_POST['pedido'];
+$id_producto = $_POST['producto'];
+$sql = $con->prepare("DELETE FROM detalle_pedido WHERE id_pedido = ? and id_producto = ?");
 $sql->bind_param(
-    "s",
-    $id_detalle
+    "ss",
+    $id_detalle,
+    $id_producto
 );
 $sql->execute();
 //Ahora actualizamos el total del pedido

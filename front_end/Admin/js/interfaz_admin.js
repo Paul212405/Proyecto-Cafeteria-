@@ -1,4 +1,4 @@
-function cargarinterfaz(url, contenedor) {
+function cargarcomponente(url, contenedor) {
     $.get(url, {}, function (data) {
       $("#" + contenedor).html(data);
     });

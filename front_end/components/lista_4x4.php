@@ -12,12 +12,39 @@ include("../../back_end/controladores/p_productos.php");
     ?>
         <div class=" block col-span-1 bg-white rounded-b-lg">
             <div class="bg-[url('./../Public/images/productos/producto_<?php echo $productos['id_producto']?>.jpg')] block w-full h-52 sm:h-40 bg-cover" alt="slider_01"></div>
-            <div class="block p-6 ">
+            <div class="block py-6 px-6 sm:px-3 ">
                 <p class="text-lg lg:text-sm font-bold text-center my-3"><button onclick="quitar_scroll_y(<?php echo $productos['id_producto']?>,<?php echo $c ?>,<?php echo $o ?>)">
                         <?php echo $productos['nombre']; ?>
                 </button></p>
-                <div class="flex justify-around items-center text-md lg:text-xs">
-                    <p>Sin estrellas</p>
+                <div class="flex justify-around items-center text-md lg:text-[10px]">
+                    <p>
+                        <!--Menu de estrellas pero para mostrar la valoracion promedio-->
+                    <div class="flex justify-start gap-2 items-center mr-3">
+                        <div class="pb-1">
+                            <?php
+                            $id = $productos['id_producto'];
+                            //Buscamos sus datos de valoracion
+                            $sql = "SELECT ROUND(AVG(valoracion)) as media FROM tb_testimonio WHERE id_producto=$id";
+                            $resultado = $con->query($sql);
+                            $valoracion = $resultado->fetch_array();
+                            $media_valoraciones = 0;
+                            if ($valoracion != null) {
+                            $media_valoraciones = $valoracion['media'];
+                            }
+                            //Va imprimir la cantidad de estrellas correspondientes
+                            if($media_valoraciones>0){
+                            for ($i = 0; $i < $media_valoraciones; $i++) {
+                            ?>
+                                <label class="text-2xl sm:text-lg md:text-md lg:text-xs mr-2 text-yellow-500">&#9733;</label>
+                            <?php
+                            }
+                            }else{
+                                echo "Sin reseñas";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    </p>
                     <p>(
                         <?php
                         $id = $productos['id_producto'];

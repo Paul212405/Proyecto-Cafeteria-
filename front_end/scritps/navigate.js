@@ -28,6 +28,9 @@ function eliminar_detalle_pedido(datos, metodo, url, error) {
   });
 }
 function actualizar_carrito() {
-  cargarinterfaz("./components/item_carrito.php", "contenedor_item_carrito");
-  cargarinterfaz("./components/carrito.php", "contenedor_carrito");
+  setTimeout(function () {
+    // código que se ejecutará después de 1 segundos
+    cargarinterfaz("./components/item_carrito.php", "contenedor_item_carrito");
+    cargarinterfaz("./components/carrito.php", "contenedor_carrito");
+  }, 1000);
 }

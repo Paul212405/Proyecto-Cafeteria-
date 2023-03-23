@@ -13,6 +13,7 @@ if (isset($_GET['limite'])) {
 }
 $result = $con->query($sql);
 ?>
+<script src="./js/interfaz_admin.js"></script>
 <div class="block ">
     <div class="lg:ml-72 bg-slate-50 h-16 shadow-2xl mb-4 flex justify-between items-center pl-4">
         <div class="flex justify-start items-center gap-4">
@@ -58,7 +59,7 @@ $result = $con->query($sql);
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">
+                            <button onclick="cargarcomponente('./paginas/edit_usuario.php?id=<?php echo $usuarios['id_usuario']?>','contenedor_usuario')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">
                                 <i class="fas fa-edit fa-lg"></i></button>
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -71,6 +72,7 @@ $result = $con->query($sql);
             </tbody>
         </table>
     </div>
+    <
 </div>
 <!--Paginacion-->
 <?php
@@ -87,7 +89,7 @@ $numpaginas = ceil($total / $cantidad);
     <ul class="flex justify-center ">
         <li>
             <!--Este boton nos regresa una pagina atras siempre y cuando ya hayamos selecionado una pagina-->
-            <button onclick="cargarinterfaz('./paginas/usuario.php?limite=<?php if(($limi - 5) < 0){echo 0;}else{echo $limi - 5;}?>', 'contenedor_admin')" class="rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white" href="#!">Previo</button>
+            <button onclick="cargarcomponente('./paginas/usuario.php?limite=<?php if(($limi - 5) < 0){echo 0;}else{echo $limi - 5;}?>', 'contenedor_admin')" class="rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white" href="#!">Previo</button>
         </li>
         <?php
         //Aqui va generar la paginacion y mediante nuestro metodo para llamar componentes recargamos la lista  en la que nos encontramos y enviamos los datos de como la categoria y el orden en que se encuentran actualmente
@@ -95,7 +97,7 @@ $numpaginas = ceil($total / $cantidad);
             $lim = $i * $cantidad;
         ?>
             <li>
-                <button onclick="cargarinterfaz('./paginas/usuario.php?limite=<?php echo $lim?>','contenedor_admin')" 
+                <button onclick="cargarcomponente('./paginas/usuario.php?limite=<?php echo $lim?>','contenedor_admin')" 
                 class="rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"><?php echo ($i + 1) ?></button>
             </li>
             <!---->
@@ -104,8 +106,11 @@ $numpaginas = ceil($total / $cantidad);
         ?>
         <li>
             <!--Este boton envia una pagina adelante siempre y cuando ya hayamos selecionado una pagina-->
-            <button onclick="cargarinterfaz('./paginas/usuario.php?limite=<?php if(($limi + 5) > $total){echo ceil($total/5)*5;}else{echo $limi + 5;}?>', 'contenedor_admin')" class="rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white">Siguiente</button>
+            <button onclick="cargarcomponente('./paginas/usuario.php?limite=<?php if(($limi + 5) > $total){echo ceil($total/5)*5;}else{echo $limi + 5;}?>', 'contenedor_admin')" class="rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white">Siguiente</button>
         </li>
     </ul>
+</div>
+<div class="my-10" id="contenedor_usuario">
+
 </div>
 <script src="./js/interfaz_admin.js"></script>
