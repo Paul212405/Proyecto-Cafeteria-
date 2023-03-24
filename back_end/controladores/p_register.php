@@ -15,6 +15,7 @@ if ($nombres == "" || $apellidos == "" || $correo  == "" || $pass == "") {
 //Explode quita lo espacios a la cadena y implde lo une sin espacios
 $usuario = implode("", explode(" ", $nombres));
 //preparar consulta insert para insertar usuario 
+$con->begin_transaction();    
 $sql = $con->prepare("INSERT INTO tb_usuario(nombre,password,email,tipo,estado) VALUES(?,?,?,?,?)");
 $sql->bind_param(
     "sssss",
@@ -26,10 +27,8 @@ $sql->bind_param(
 );
 $sql->execute();
 //Primero obtenemos el ultimo usuario creado
-$sql = "SELECT id_usuario FROM tb_usuario WHERE nombre='$usuario' and password = '$pass'";
-$result = $con->query($sql);
-$usuario = $result->fetch_array();
-$id_usuario = $usuario['id_usuario'];
+$id_usuario = $con->insert_id;
+
 //Automaticamente se le crea su cuenta de cliente
 $sql = $con->prepare("INSERT INTO tb_cliente(nombres,apellidos,email,id_usuario) VALUES(?,?,?,?)");
 $sql->bind_param(
@@ -40,4 +39,5 @@ $sql->bind_param(
     $id_usuario
 );
 $sql->execute();
+$con->commit();
 $con->close();

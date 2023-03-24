@@ -49,4 +49,4 @@ if ($contra_nueva != "" && $conf != "" && $con_nueva != "") {
     $sql->execute();
 }
 $con->close();
-header("location: ../../front_end/cuenta.php");
+header("location: ../../cuenta.php");

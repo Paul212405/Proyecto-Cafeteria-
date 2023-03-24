@@ -16,4 +16,4 @@ $sql->bind_param(
 );
 $sql->execute();
 $con->close();
-header("location: ../../front_end/cuenta.php");
+header("location: ../../cuenta.php");

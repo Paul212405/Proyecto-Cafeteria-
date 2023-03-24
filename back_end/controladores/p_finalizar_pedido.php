@@ -2,8 +2,11 @@
 include("../conexion/conexion.php");
 include("../conexion/seguridad.php");
 //Primero preguntamos si el cliente ya actualizo su direccion de facturacion
-$direccion = $_GET["direccion"];
-if ($direccion != "") {
+$id_usuario = $_SESSION['usuario'];
+$sql = "SELECT direccion_facturacion FROM tb_cliente WHERE id_usuario = $id_usuario";
+$result = $con->query($sql);
+$cliente = $result->fetch_array();
+if ($cliente["direccion_facturacion"] != "") {
     //Vamos a capturar el pedido pendiente
     $id_pedido = $_SESSION['pedido'];
     $fecha_pedido = date('Y-m-d H:i:s');
@@ -19,7 +22,7 @@ if ($direccion != "") {
     $con->close();
     $_SESSION['pedido'] = 0;
     $_SESSION['estado_pedido'] = "espera";
-    header("location:  ../../front_end/index.php");
+    header("location: ../../index.php");
 } else {
-    header("location:  ../../front_end/pedido.php?d=incompleto");
+    header("location: ../../pedido.php?d=incompleto");
 }
