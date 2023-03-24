@@ -7,6 +7,7 @@ $apellidos = $_POST['txt_apellidos'];
 $correo = $_POST['txt_correo'];
 $pass = $_POST['txt_pass'];
 $c = 'C';
+$estado = "A";
 if ($nombres == "" || $apellidos == "" || $correo  == "" || $pass == "") {
     http_response_code(400);
     exit();
@@ -14,13 +15,14 @@ if ($nombres == "" || $apellidos == "" || $correo  == "" || $pass == "") {
 //Explode quita lo espacios a la cadena y implde lo une sin espacios
 $usuario = implode("", explode(" ", $nombres));
 //preparar consulta insert para insertar usuario 
-$sql = $con->prepare("INSERT INTO tb_usuario(nombre,password,email,tipo) VALUES(?,?,?,?)");
+$sql = $con->prepare("INSERT INTO tb_usuario(nombre,password,email,tipo,estado) VALUES(?,?,?,?,?)");
 $sql->bind_param(
-    "ssss",
+    "sssss",
     $usuario,
     $pass,
     $correo,
-    $c
+    $c,
+    $estado
 );
 $sql->execute();
 //Primero obtenemos el ultimo usuario creado

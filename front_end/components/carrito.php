@@ -66,7 +66,7 @@ if($pedido != 0){
             </div>
         </div>
         <div class="flex flex-wrap mx-5 mb-5 text-center">
-            <a href="" class="w-full my-1 px-10 py-2 bg-slate-300/70 hover:bg-slate-300/40 text-lg font-bold rounded-lg">Ver Detalle</a>
+            <a href="./pedido.php" class="w-full my-1 px-10 py-2 bg-slate-300/70 hover:bg-slate-300/40 text-lg font-bold rounded-lg">Ver Detalle</a>
             <a href="" class="w-full my-1 px-10 py-2 text-white bg-blue-700 hover:bg-blue-800 text-lg font-bold rounded-lg">Finalizar Compra</a>
         </div>
     </div>

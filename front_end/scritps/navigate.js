@@ -17,7 +17,7 @@ function cargarinterfaz(url, contenedor) {
     $("#" + contenedor).html(data);
   });
 }
-//Funcion para enviar la peticion sin un formulario
+//Funcion para enviar la peticion sin un formulario y que me actualice el carrito
 function eliminar_detalle_pedido(datos, metodo, url, error) {
   $.ajax({
     url: url,
@@ -27,10 +27,27 @@ function eliminar_detalle_pedido(datos, metodo, url, error) {
     error: actualizar_carrito(),
   });
 }
+//Funcion para enviar la peticion sin un formulario y que me actualice las tablas pedido
+function eliminar_item_pedido(datos, metodo, url, error) {
+  $.ajax({
+    url: url,
+    type: metodo,
+    data: datos,
+    success: actualizar_tabla_pedido(),
+    error: actualizar_tabla_pedido(),
+  });
+}
 function actualizar_carrito() {
   setTimeout(function () {
     // código que se ejecutará después de 1 segundos
     cargarinterfaz("./components/item_carrito.php", "contenedor_item_carrito");
     cargarinterfaz("./components/carrito.php", "contenedor_carrito");
+  }, 1000);
+}
+function actualizar_tabla_pedido() {
+  setTimeout(function () {
+    // código que se ejecutará después de 1 segundos
+    cargarinterfaz("./components/item_carrito.php", "contenedor_item_carrito");
+    cargarinterfaz('./components/tabla_pedido.php', 'contenedor_tabla_pedido');
   }, 1000);
 }
