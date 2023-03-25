@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="relative -m-24 mb-px z-0" data-te-carousel-init data-te-carousel-slide>
+<div id="carouselExampleControls" class="relative z-0" data-te-carousel-init data-te-carousel-slide>
     <!--Imagenes carrusel-->
     <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
         <div class="relative z-0 float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none bg-cover" data-te-carousel-item data-te-carousel-active>

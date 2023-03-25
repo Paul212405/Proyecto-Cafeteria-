@@ -1,11 +1,12 @@
 <?php
 //Incluye la variable auth por si ya se logeo un usuario
-include_once("utils/head.php");
 include("../back_end/conexion/seguridad.php");
 //Pregunta si es admin
 if ($_SESSION['tipo'] != "A") {
-    header("location: ../index.php");
+    //header("location: ../index.php");
+    echo "<script>window.location='../index.php'</script>";
 }
+include_once("utils/head.php");
 //Si se envio la edicion de una tabla
 if (isset($_GET['t'])) {
     switch ($_GET['t']) {

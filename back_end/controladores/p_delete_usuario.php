@@ -61,4 +61,5 @@ if (mysqli_num_rows($result) == 0) {
     }
 }
 $con->close();
-header("location: ../../Admin/principal.php?t=1");
+//header("location: ../../Admin/principal.php?t=1");
+echo "<script>window.location='../../Admin/principal.php?t=1'</script>";

@@ -15,7 +15,8 @@ $r = $result->fetch_array();
 $existeUsuario = $result->num_rows;
 
 if ($existeUsuario <= 0) {
-    header("location: ../../index.php");
+    //header("location: ../../index.php");
+    echo "<script>window.location='../../index.php'</script>";
 } else {
     if ($r['estado'] == "A") {
         $idusuario = $r["id_usuario"];
@@ -49,13 +50,16 @@ if ($existeUsuario <= 0) {
                     }
                 }
             }
-            header("location: ../../index.php");
+            //header("location: ../../index.php");
+            echo "<script>window.location='../../index.php'</script>";
             // usuario "normal";
         } else if ($_SESSION["tipo"] == 'A') {
-            header("location: ../../Admin/principal.php");
+            //header("location: ../../Admin/principal.php");
+            echo "<script>window.location='../../Admin/principal.php'</script>";
             // usuario "admin";
         }
     }else{
-        header("location: ../../index.php");
+        //header("location: ../../index.php");
+        echo "<script>window.location='../../index.php'</script>";
     }
 }

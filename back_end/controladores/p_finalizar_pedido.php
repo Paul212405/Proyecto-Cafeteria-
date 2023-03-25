@@ -6,6 +6,12 @@ $id_usuario = $_SESSION['usuario'];
 $sql = "SELECT direccion_facturacion FROM tb_cliente WHERE id_usuario = $id_usuario";
 $result = $con->query($sql);
 $cliente = $result->fetch_array();
+//Y verificar que el pedido no este en 0
+$id_pedido = $_SESSION['pedido'];
+$sql = "SELECT total FROM tb_pedido WHERE id_pedido = $id_pedido";
+$result = $con->query($sql);
+$pedido = $result->fetch_array();
+if ($pedido['total'] > 0) {
 if ($cliente["direccion_facturacion"] != "") {
     //Vamos a capturar el pedido pendiente
     $id_pedido = $_SESSION['pedido'];
@@ -22,7 +28,13 @@ if ($cliente["direccion_facturacion"] != "") {
     $con->close();
     $_SESSION['pedido'] = 0;
     $_SESSION['estado_pedido'] = "espera";
-    header("location: ../../index.php");
+    //header("location: ../../index.php");
+    echo "<script>window.location='../../index.php'</script>";
 } else {
-    header("location: ../../pedido.php?d=incompleto");
+    //header("location: ../../pedido.php?d=incompleto");
+    echo "<script>window.location='../../pedido.php?d=incompleto'</script>";
+}
+}else{
+    //header("location: ../../index.php");
+    echo "<script>window.location='../../index.php'</script>";
 }

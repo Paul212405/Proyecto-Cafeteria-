@@ -49,4 +49,5 @@ if ($contra_nueva != "" && $conf != "" && $con_nueva != "") {
     $sql->execute();
 }
 $con->close();
-header("location: ../../cuenta.php");
+//header("location: ../../cuenta.php");
+echo "<script>window.location='../../cuenta.php'</script>";
