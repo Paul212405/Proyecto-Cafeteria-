@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="mt-4 lg:mt-0 lg:mx-4">
-        <a href="#" class="flex justify-start items-center lg:justify-center text-black hover:text-red-900 font-bold text-sm">
+        <a href="./nosotros.php" class="flex justify-start items-center lg:justify-center text-black hover:text-red-900 font-bold text-sm">
           <div><i class="fas fa-users fa-lg mr-2"></i></div>
           <div><span>Nosotros</span></div>
         </a>

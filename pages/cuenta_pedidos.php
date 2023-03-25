@@ -12,13 +12,13 @@ $result = $con->query($sql);
 if (mysqli_num_rows($result) > 0) {
 ?>
     <div class="w-full mx-auto px-5">
-        <table class="w-full border-collapse">
+        <table class="table table-auto w-full border-collapse">
             <thead>
                 <tr class="text-left">
-                    <th class="border-b-[2px] border-b-black/80 pb-2 text-xl font-bold">Nº</th>
-                    <th class="border-b-[2px] border-b-black/80 pb-2 text-xl font-bold">Fecha Registro</th>
-                    <th class="border-b-[2px] border-b-black/80 pb-2 text-xl font-bold">Total</th>
-                    <th class="border-b-[2px] border-b-black/80 pb-2 text-xl font-bold">Estado</th>
+                    <th class="border-b-[2px] border-b-black/80 pb-2 text-sm sm:text-xl font-bold">Nº</th>
+                    <th class="border-b-[2px] border-b-black/80 pb-2 text-sm sm:text-xl font-bold">Fecha Registro</th>
+                    <th class="border-b-[2px] border-b-black/80 pb-2 text-sm sm:text-xl font-bold">Total</th>
+                    <th class="border-b-[2px] border-b-black/80 pb-2 text-sm sm:text-xl font-bold">Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,16 +26,16 @@ if (mysqli_num_rows($result) > 0) {
                 while ($pedidos = $result->fetch_array()) {
                 ?>
                     <tr>
-                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-lg font-normal">
+                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-sm lg:text-lg font-normal">
                             <?php echo sprintf('%05d', $pedidos['id_pedido']) ?>
                         </td>
-                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-lg font-normal">
+                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-sm lg:text-lg font-normal">
                             <?php echo $pedidos['fecha_pedido'] ?>
                         </td>
-                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-lg font-normal">
+                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-sm lg:text-lg font-normal">
                             S/ <?php echo $pedidos['total'] ?>
                         </td>
-                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-lg font-normal">
+                        <td class="border-b-[1px] border-b-black/30 shadow-lg py-4 px-2 text-sm lg:text-lg font-normal">
                             <?php if ($pedidos['estado'] == "finalizado") {
                                 echo "Finalizado y enviado";
                             } else {
