@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-03-2023 a las 17:23:30
+-- Tiempo de generación: 25-03-2023 a las 04:10:57
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_cafeteria2023`
 --
+CREATE DATABASE IF NOT EXISTS `bd_cafeteria2023` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bd_cafeteria2023`;
 
 -- --------------------------------------------------------
 
@@ -40,9 +42,6 @@ CREATE TABLE `detalle_pedido` (
 --
 
 INSERT INTO `detalle_pedido` (`id_det_pedido`, `id_pedido`, `id_producto`, `cantidad`, `sub_total`) VALUES
-(56, 5, 5, 3, '7.50'),
-(57, 5, 1, 1, '2.99'),
-(58, 6, 5, 10, '25.00'),
 (250, 3, 33, 11, '87.89'),
 (258, 3, 19, 12, '21.00'),
 (280, 3, 22, 9, '89.91'),
@@ -59,7 +58,18 @@ INSERT INTO `detalle_pedido` (`id_det_pedido`, `id_pedido`, `id_producto`, `cant
 (299, 10, 1, 4, '11.96'),
 (300, 10, 2, 8, '36.00'),
 (301, 11, 1, 3, '8.97'),
-(302, 11, 22, 3, '29.97');
+(302, 11, 22, 3, '29.97'),
+(308, 13, 3, 6, '35.94'),
+(312, 13, 11, 6, '6.00'),
+(313, 13, 1, 2, '5.98'),
+(314, 13, 1, 1, '2.99'),
+(316, 13, 1, 5, '14.95'),
+(317, 13, 1, 5, '14.95'),
+(318, 13, 3, 8, '47.92'),
+(325, 17, 1, 2, '5.98'),
+(331, 18, 1, 9, '26.91'),
+(332, 18, 33, 7, '55.93'),
+(333, 18, 33, 6, '47.94');
 
 -- --------------------------------------------------------
 
@@ -107,10 +117,8 @@ CREATE TABLE `tb_cliente` (
 --
 
 INSERT INTO `tb_cliente` (`id_cliente`, `nombres`, `apellidos`, `direccion`, `direccion_facturacion`, `email`, `celular`, `id_usuario`) VALUES
-(1, 'Paul Lenyn', 'Morales Susanibar Camila', 'Tupac Amaru 206 - El Socorro', 'Mi casa en Socorro', 'pauli@gmail.com', '973348411', 1),
-(2, 'Camila Nicol', 'Morales Susanibar', '', NULL, 'camilamoralessusanibar@gmail.com', '', 3),
-(5, 'Manuel Prados', 'Cordova Toledo', NULL, NULL, '0332191014@unjfsc.edu.pe', NULL, 8),
-(6, 'Manolo Piero', 'Nicol', NULL, NULL, 'camilamoralessusanibar@gmail.com', NULL, 9);
+(1, 'Paul Lenyn Oso', 'Mallqui Rivera', 'Tupac Amaru 206 - El Socorro', 'Mi casa en Socorro', 'pauli@gmail.com', '973348411', 1),
+(2, 'Camila Nicol', 'Morales Susanibar', '', 'La Marina', 'camilamoralessusanibar@gmail.com', '', 3);
 
 -- --------------------------------------------------------
 
@@ -133,12 +141,17 @@ CREATE TABLE `tb_pedido` (
 
 INSERT INTO `tb_pedido` (`id_pedido`, `id_cliente`, `fecha_pedido`, `total`, `estado`, `observaciones`) VALUES
 (3, 1, '2023-03-24', '228.75', 'finalizado', NULL),
-(5, 5, NULL, '10.49', 'carrito', NULL),
-(6, 6, NULL, '25.00', 'carrito', NULL),
-(8, 2, NULL, '268.19', 'carrito', NULL),
+(8, 2, '2023-03-25', '268.19', 'finalizado', NULL),
 (9, 1, '2023-03-24', '36.92', 'finalizado', NULL),
 (10, 1, '2023-03-24', '47.96', 'finalizado', NULL),
-(11, 1, '2023-03-24', '38.94', 'finalizado', NULL);
+(11, 1, '2023-03-24', '38.94', 'finalizado', NULL),
+(12, 1, '2023-03-24', '0.00', 'finalizado', NULL),
+(13, 1, '2023-03-24', '128.73', 'finalizado', NULL),
+(14, 1, '2023-03-24', '0.00', 'finalizado', NULL),
+(15, 1, '2023-03-24', '0.00', 'finalizado', NULL),
+(16, 1, '2023-03-24', '0.00', 'finalizado', NULL),
+(17, 1, '2023-03-24', '5.98', 'finalizado', NULL),
+(18, 1, NULL, '130.78', 'carrito', NULL);
 
 -- --------------------------------------------------------
 
@@ -260,7 +273,11 @@ INSERT INTO `tb_testimonio` (`id_testimonio`, `id_cliente`, `testimonio`, `valor
 (27, 1, 'A', 3, '2023-03-21 17:17:43', 1),
 (28, 1, 'Le falto azucar', 2, '2023-03-22 19:13:54', 44),
 (29, 1, 'Le falta mas jugo. ', 3, '2023-03-22 21:48:31', 49),
-(30, 1, 'Yo lo preparo mejor', 1, '2023-03-22 22:01:34', 31);
+(30, 1, 'Yo lo preparo mejor', 1, '2023-03-22 22:01:34', 31),
+(34, 1, 'Comida', 3, '2023-03-24 18:02:15', 10),
+(35, 1, 'Mono', 4, '2023-03-24 19:12:40', 1),
+(36, 1, 'Son muy ricos brownies', 4, '2023-03-24 23:24:38', 33),
+(37, 2, 'Quiero mas galletas jejeje.', 4, '2023-03-24 23:43:29', 12);
 
 -- --------------------------------------------------------
 
@@ -283,13 +300,11 @@ CREATE TABLE `tb_usuario` (
 --
 
 INSERT INTO `tb_usuario` (`id_usuario`, `nombre`, `password`, `email`, `fecha_registro`, `tipo`, `estado`) VALUES
-(1, 'PaulyCamila', '212405', 'paul@gmail.com', '2023-03-23', 'C', 'A'),
+(1, 'PaulCamila', '212405', 'paul@gmail.com', '2023-03-23', 'C', 'A'),
 (3, 'CamilaNicol', '212405', 'camilamoralessusanibar@gmail.com', '2023-03-19', 'C', 'A'),
-(6, 'Paul', '1234', 'paul@gmail.com', '2023-03-20', 'A', 'A'),
-(8, 'ManuelPrados', '15', '0332191014@unjfsc.edu.pe', '2023-03-20', 'C', 'A'),
-(9, 'ManoloPiero', '1234', 'camilamoralessusanibar@gmail.com', '2023-03-20', 'C', 'A'),
 (12, 'Camila', '1234', 'camila@gmail.com', '2023-03-23', 'A', 'A'),
-(14, 'Jorge', '1234', 'oscar@gmail.com', '2023-03-23', 'C', 'I');
+(14, 'Jorge', '1234', 'oscar@gmail.com', '2023-03-23', 'C', 'I'),
+(30, 'Paul', '1234', 'paulo@gmail.com', '2023-03-24', 'A', 'A');
 
 --
 -- Índices para tablas volcadas
@@ -352,7 +367,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT de la tabla `detalle_pedido`
 --
 ALTER TABLE `detalle_pedido`
-  MODIFY `id_det_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=303;
+  MODIFY `id_det_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categoria`
@@ -364,13 +379,13 @@ ALTER TABLE `tb_categoria`
 -- AUTO_INCREMENT de la tabla `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_pedido`
 --
 ALTER TABLE `tb_pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_producto`
@@ -382,13 +397,13 @@ ALTER TABLE `tb_producto`
 -- AUTO_INCREMENT de la tabla `tb_testimonio`
 --
 ALTER TABLE `tb_testimonio`
-  MODIFY `id_testimonio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_testimonio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restricciones para tablas volcadas

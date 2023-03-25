@@ -16,7 +16,7 @@ $testimonios = $resultado->fetch_array();
 
 <body class="bg-black overflow-x-hidden">
     <!--Div creado para posicionar los elementos en altura Z-->
-    <div class="relative">
+    <div class="relative" >
         <?php include("components/navigate.php") ?>
         <?php include_once("components/slider_prin.php") ?>
     </div>
