@@ -6,6 +6,11 @@ $sql = "select * from tb_producto where id_producto=$id_producto";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
+//Las categorias
+$sql = "SELECT * FROM tb_categoria";
+//Obtener los usuario que necesitan una cuenta cliente
+$resultado = $con->query($sql);
+?>
 ?>
 
 <section class="block">
@@ -45,7 +50,31 @@ $row = mysqli_fetch_assoc($result);
             <div class="">
                 <label class="">Estado</label>
                 <div class="">
-                    <input type="text" class="form-control" name="txt_estado" placeholder="Estado" value="<?php echo $row['estado']; ?>">
+                    <select name="estado" id="">
+                        <option value="d" <?php if($row['estado']=="d"){echo "selected";}?>>
+                            Disponible
+                        </option>
+                        <option value="a" <?php if($row['estado']=="a"){echo "selected";}?>>
+                            Agotado
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="">
+                <label class="">Categoria</label>
+                <div class="">
+                    <select name="categoria">
+                        <?php
+                        while ($categorias = $resultado->fetch_array()) {
+                        ?>
+                            <option value="<?php echo $categorias['id_categoria'] ?>" 
+                            <?php if($row['id_categoria'] == $categorias['id_categoria']){echo "selected";}?> >
+                                <?php echo $categorias['nombre'] ?>
+                            </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="">

@@ -34,6 +34,14 @@ if (isset($_GET['t'])) {
                 });
                 </script>";
             break;
+        case 4:
+            $_GET['t'];
+            echo "<script>
+                    window.addEventListener('load', function() {
+                        cargarcomponente('./paginas/producto.php','contenedor_admin')
+                    });
+                    </script>";
+            break;
     }
 }
 ?>
