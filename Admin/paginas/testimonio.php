@@ -1,7 +1,7 @@
 <?php
 include("../../back_end/conexion/conexion.php");
 //Generando la consulta para traer los datos
-$sql = "SELECT * FROM tb_testimonio";
+$sql = "SELECT tes.id_testimonio,CONCAT(cli.apellidos,' ',cli.nombres) as nombre_cliente,cli.id_cliente,tes.testimonio, tes.valoracion,tes.fecha_registro,po.nombre FROM tb_testimonio tes inner join tb_cliente cli on cli.id_cliente = tes.id_cliente inner join tb_producto po on po.id_producto = tes.id_producto";
 //Obtener la cantidad de usuarios
 $sqlpag = "select count(*) as total from tb_testimonio";
 //Para la paginacion
@@ -38,9 +38,11 @@ $result = $con->query($sql);
         <table class="min-w-full border-collapse block md:table text-sm">
             <thead class="block md:table-header-group">
                 <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative z-0">
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Cliente</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Testimonio</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Valoración</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Fecha Registro</th>
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Producto</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Operaciones</th>
                 </tr>
             </thead>
@@ -49,6 +51,9 @@ $result = $con->query($sql);
                 while ($testimonios = $result->fetch_array()) {
                 ?>
                     <tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Cliente</span>
+                        <?php echo $testimonios['nombre_cliente']?>
+                        </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Testimonio</span>
                         <?php echo $testimonios['testimonio']?>
                         </td>
@@ -57,6 +62,9 @@ $result = $con->query($sql);
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Fecha Registro</span>
                         <?php echo $testimonios['fecha_registro']?>
+                        </td>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Producto</span>
+                        <?php echo $testimonios['nombre']?>
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>

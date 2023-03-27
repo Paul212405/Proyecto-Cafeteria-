@@ -18,7 +18,22 @@ if (isset($_GET['t'])) {
             });
             </script>";
             break;
-
+        case 2:
+            $_GET['t'];
+            echo "<script>
+                window.addEventListener('load', function() {
+                    cargarcomponente('./paginas/cliente.php','contenedor_admin')
+                });
+                </script>";
+            break;
+        case 3:
+            $_GET['t'];
+            echo "<script>
+                window.addEventListener('load', function() {
+                    cargarcomponente('./paginas/testimonio.php','contenedor_admin')
+                });
+                </script>";
+            break;
     }
 }
 ?>

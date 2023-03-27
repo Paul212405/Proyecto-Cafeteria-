@@ -367,6 +367,7 @@ include_once("utils/head.php");
             </div>
         </div>
     </div>
+    <!--
     <div class="mx-2 sm:mx-4 transition-all duration-700 my-4">
         <div class="flex justify-center items-center">
             <p class="font-bold text-3xl">¿Quienes somos los dos?</p>
@@ -382,7 +383,7 @@ include_once("utils/head.php");
                     </p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </body>
 <?php include("components/footer.php") ?>

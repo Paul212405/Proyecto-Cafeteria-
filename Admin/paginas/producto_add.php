@@ -1,3 +1,4 @@
+
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL PRODUCT0 ::: AGREGAR DATOS</h1>
