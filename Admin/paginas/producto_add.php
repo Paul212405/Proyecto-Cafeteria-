@@ -1,3 +1,10 @@
+<?php 
+include("../../back_end/conexion/conexion.php");
+//Los usuarios
+$sql = "SELECT * FROM tb_categoria";
+//Obtener los usuario que necesitan una cuenta cliente
+$resultado = $con->query($sql);
+?>
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL PRODUCT0 ::: AGREGAR DATOS</h1>
@@ -29,7 +36,30 @@
             <div class="">
                 <label class="">Estado</label>
                 <div class="">
-                    <input type="text" class="form-control" name="txt_estado" placeholder="Estado del producto" required>
+                    <select name="estado" id="">
+                        <option value="d" selected>
+                            Disponible
+                        </option>
+                        <option value="a">
+                            Agotado
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="">
+                <label class="">Categoria</label>
+                <div class="">
+                    <select name="categoria" >
+                        <?php
+                        while($categorias = $resultado->fetch_array()){
+                        ?>
+                        <option value="<?php echo $categorias['id_categoria'] ?>">
+                            <?php echo $categorias['nombre'] ?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="">

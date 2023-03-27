@@ -4,10 +4,15 @@ include("../conexion/seguridad.php");
 //Cargar dato
 $id_cliente = $_GET['id'];
 
-$sql = "SELECT * FROM tb_cliente where id_cliente=?";
+$sql = "SELECT * FROM tb_cliente where id_cliente=$id_cliente";
 $result = $con->query($sql); 
+$cliente = mysqli_fetch_assoc($result);
+$id_usuario = $cliente['id_usuario'];
 
+//Iniciamos toda una transaccion para eliminar todos sus datos en cadena
+$con->begin_transaction();
     try {
+        
         // Eliminar los registros relacionados del cliente
         $sql = $con->prepare("DELETE FROM tb_testimonio WHERE id_cliente = ?");
         $sql->bind_param("s", $id_cliente);
@@ -31,6 +36,13 @@ $result = $con->query($sql);
         $sql->bind_param("s", $id_cliente);
         $sql->execute();
 
+        $sql = $con->prepare("DELETE FROM tb_usuario WHERE id_usuario = ?");
+        $sql->bind_param(
+            "s",
+            $id_usuario
+        );
+        $sql->execute();
+
         // Confirmar la transacción
         $con->commit();
 
@@ -44,4 +56,4 @@ $result = $con->query($sql);
 
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=1'</script>";
+echo "<script>window.location='../../Admin/principal.php?t=2'</script>";

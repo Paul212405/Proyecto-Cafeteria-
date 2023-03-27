@@ -12,6 +12,7 @@ if (isset($_GET['limite'])) {
     $sql = $sql . " limit 0,5";
 }
 $result = $con->query($sql);
+
 ?>
 <script src="./js/interfaz_admin.js"></script>
 <div class="block ">

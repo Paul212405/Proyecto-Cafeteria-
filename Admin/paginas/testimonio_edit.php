@@ -5,6 +5,10 @@ $id_testimonio = $_GET['id'];
 $sql = "select * from tb_testimonio where id_testimonio=$id_testimonio";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
+
+//Los productos
+$sql = "SELECT * FROM tb_producto";
+$result_producto = $con->query($sql);
 ?>
 
 <section class="block">
@@ -30,12 +34,22 @@ $row = mysqli_fetch_assoc($result);
                 </div>
             </div>
             <div class="">
-                <label class="">Fecha Registro</label>
+                <label class="">Producto</label>
                 <div class="">
-                    <input type="date" class="form-control" name="fecha" value="<?php echo $row['fecha_registro']; ?>">
+                    <select name="producto">
+                        <?php
+                        while ($productos = $result_producto->fetch_array()) {
+                        ?>
+                            <option value="<?php echo $productos['id_producto'] ?>" 
+                            <?php if($row['id_producto'] == $productos['id_producto']){echo "selected";}?> >
+                                <?php echo $productos['nombre'] ?>
+                            </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
-
             <div class="">
                 <div class="">
                     <button type="submit" name="edit" class="btn btn-info"><i class="fa fa-save mx-2"></i> Guardar Datos</button>
