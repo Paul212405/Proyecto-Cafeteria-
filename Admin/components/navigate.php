@@ -8,7 +8,7 @@
         <div class="flex items-center justify-center">
             <!--Logo de empresa-->
             <a href="">
-                <img src="../Public/images/productos/producto_1.jpg" class="w-12 h-12">
+                <img src="../Public/images/negocio/logo.png" class="w-32 h-32">
             </a>
         </div>
     </div>

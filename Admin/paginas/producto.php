@@ -1,7 +1,7 @@
 <?php
 include("../../back_end/conexion/conexion.php");
 //Generando la consulta para traer los datos
-$sql = "SELECT * FROM tb_producto";
+$sql = "SELECT po.id_producto,po.nombre,po.descripcion,po.precio,po.stock,po.estado,ca.nombre as categoria FROM tb_producto po inner join tb_categoria ca on po.id_categoria = ca.id_categoria";
 //Obtener la cantidad de usuarios
 $sqlpag = "select count(*) as total from tb_producto";
 //Para la paginacion
@@ -32,7 +32,7 @@ $result = $con->query($sql);
     <div class="max-lg:mt-10 lg:mr-14 lg:ml-80 sm:mx-10 transition-all duration-1000">
         <div class="text-right my-4">
         <button onclick="cargarcomponente('./paginas/producto_add.php','contenedor_producto')" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">
-        <i class="fas fa-plus fa-sm"></i> Añadir Prodcuto
+        <i class="fas fa-plus fa-sm"></i> Añadir Producto
         </button>
         </div>
         <table class="min-w-full border-collapse block md:table text-sm">
@@ -43,6 +43,7 @@ $result = $con->query($sql);
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Precio</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Stock</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Estado</th>
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Categoria</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Operaciones</th>
                 </tr>
             </thead>
@@ -65,6 +66,9 @@ $result = $con->query($sql);
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Estado</span>
                         <?php echo $productos['estado']?>
+                        </td>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Categoria</span>
+                        <?php echo $productos['categoria']?>
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>

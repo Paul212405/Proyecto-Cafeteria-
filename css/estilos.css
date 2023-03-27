@@ -1293,6 +1293,14 @@ video {
   height: 100vh;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
 .max-h-\[400px\] {
   max-height: 400px;
 }
