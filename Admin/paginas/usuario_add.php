@@ -12,7 +12,7 @@
                 <label class="">Contraseña</label>
                 <div class="">
                     <input type="password" class="form-control" name="txt_pass" placeholder="Ingrese su contraseña" required>
-                </div>
+                </div> 
             </div>
             <div class="">
                 <label class="">Email</label>

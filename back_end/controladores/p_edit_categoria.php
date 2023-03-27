@@ -2,25 +2,19 @@
 include("../conexion/conexion.php");
 include("../conexion/seguridad.php");
 //recuperando datos
-$id_usuario = $_POST["txt_codigo"];
+$id_categoria = $_POST["txt_categoria"];
 $nombre = $_POST["txt_nombre"];
-$email = $_POST["txt_email"];
-$fecha_actualizacion = $_POST["fecha"];
-$tipo = $_POST["tipo"];
-$estado = $_POST["estado"];
+$descripcion = $_POST["txt_descripcion"];
 //Tratando datos
 $nombre = trim($nombre);
-$email = trim($email);
+$descripcion = trim($descripcion);
 //Consulta para los datos personales del cliente
-$sql = $con->prepare("UPDATE tb_usuario SET nombre = ?, email = ?, fecha_registro = ?, tipo = ?, estado = ? WHERE id_usuario = ?");
+$sql = $con->prepare("UPDATE tb_categoria SET nombre = ?, descripcion = ? WHERE id_categoria = ?");
 $sql->bind_param(
-    "sssssi",
+    "ssi",
     $nombre,
-    $email,
-    $fecha_actualizacion,
-    $tipo,
-    $estado,
-    $id_usuario
+    $descripcion,
+    $id_categoria
 );
 $sql->execute();
 $con->close();
