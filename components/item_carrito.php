@@ -23,7 +23,7 @@ if (isset($_SESSION['pedido'])) {
     <div class="col-span-1 pt-1 row-span-2 flex justify-center items-center">
         <i class="fas fa-shopping-cart fa-2x m-auto text-gray-400"></i>
     </div>
-    <div class="col-span-1 text-red-900">
+    <div class="col-span-1 text-red-900 text-sm">
         <span>S/ <?php echo $total ?></span>
     </div>
     <div class="col-span-1 text-xs text-gray-900">

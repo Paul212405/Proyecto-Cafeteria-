@@ -3,7 +3,7 @@
     <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
         <div class="relative z-0 float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none bg-cover" data-te-carousel-item data-te-carousel-active>
             <!--Para el mensaje-->
-            <h1 class="z-[1] absolute top-[70%] left-[38%] sm:top-1/3 sm:left-[20%] text-white font-bold text-6xl text-center sm:text-7xl sm:text-right">Cafeteria </br>Paul y Camila</h1>    
+            <h1 class="z-[1] absolute top-[70%] left-[38%] sm:top-1/3 sm:left-[20%] text-white font-bold text-6xl text-center sm:text-7xl sm:text-right">La Casa del </br>Cafe</h1>    
             <div class="bg-[url('./../Public/images/negocio/slider_01.jpg')] block w-full h-[125vh] bg-cover opacity-80" alt="slider_01"></div>           
         </div>
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
@@ -14,7 +14,7 @@
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
             <!--Para el mensaje-->
             <h1 class="z-[1] absolute top-[70%] left-[38%] sm:top-1/3 sm:left-[20%] text-white font-bold text-6xl text-center sm:text-7xl sm:text-right">Ricos </br>y Naturales</h1>
-            <div class="bg-[url('./../Public/images/negocio/slider_03.jpg')] block w-full h-[125vh] bg-cover opa-80" alt="slider_03"></div>
+            <div class="bg-[url('./../Public/images/negocio/slider_03.jpg')] block w-full h-[125vh] bg-cover opacity-90 brightness-50" alt="slider_03"></div>
         </div>
     </div>
     <!--Boton Izquierdo-->

@@ -2,6 +2,8 @@
 include_once("utils/head.php");
 ?>
 <?php include("components/navigate.php") ?>
+<!--Script para validar el formulario y enviar datos-->
+<script src="./scritps/envio_form_correo.js"></script>
 
 <body class="bg-[url('../Public/images/negocio/contacto.png')] bg-cover">
     <div class="block text-center my-10 text-3xl pt-16 font-bold text-white">
@@ -55,22 +57,22 @@ include_once("utils/head.php");
                 <!--Bloque de consulta-->
                 <div class="block w-full sm:w-2/5 ">
                     <p class="text-xl font-bold my-4 text-center">ESCRIBANOS</p>
-                    <form action="p_login.php" method="post">
+                    <form id="form_correo" method="post">
                         <div class="block py-2">
                             <label class=" pr-8">Nombre Completo</label>
-                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_nombre_completo">
+                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_nombre_completo" required>
                         </div>
                         <div class="block py-2">
                             <label class=" pr-8">Correo Electronico</label>
-                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="email" name="txt_correo">
+                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="email" name="txt_correo" required>
                         </div>
                         <div class="block py-2">
                             <label class=" pr-8">Telefono</label>
-                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_tel">
+                            <input class="w-full h-12 border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" type="text" name="txt_tel" required maxlength="9">
                         </div>
                         <div class="block py-2">
                             <label class=" pr-8">Asunto</label>
-                            <textarea class="w-full border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" rows="3" name="txa_asunto"></textarea>
+                            <textarea class="w-full border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-500 focus:border-b-blue-800 rounded-sm mt-2 p-4 focus:outline-none" rows="3" name="txa_asunto" required></textarea>
                         </div>
                         <input class="w-full mt-2 h-12 rounded-md bg-blue-800/90 text-white font-bold hover:bg-blue-800/90 cursor-pointer" type="submit" value="ENVIAR CONSULTA">
                     </form>
