@@ -19,9 +19,6 @@ if (isset($_GET['t'])) {
             </script>";
             break;
 
-        default:
-            # code...
-            break;
     }
 }
 ?>

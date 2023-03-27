@@ -52,19 +52,19 @@
                             <button onclick="cargarcomponente('./paginas/usuario.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Usuarios</button>
                         </li>
                         <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Clientes</button>
+                            <button onclick="cargarcomponente('./paginas/cliente.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Clientes</button>
                         </li>
                         <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Testimonios</button>
+                            <button onclick="cargarcomponente('./paginas/testimonio.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Testimonios</button>
                         </li>
                         <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Productos</button>
+                            <button onclick="cargarcomponente('./paginas/producto.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Productos</button>
                         </li>
                         <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Categorias</button>
+                            <button onclick="cargarcomponente('./paginas/categoria.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Categorias</button>
                         </li>
                         <li>
-                            <button class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Pedidos</button>
+                            <button onclick="cargarcomponente('./paginas/pedido.php','contenedor_admin')" class="text-left inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white">Pedidos</button>
                         </li>
                     </ul>
                 </div>
