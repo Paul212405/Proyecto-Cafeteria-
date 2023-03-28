@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //recuperando datos
 $id_usuario = $_POST["txt_codigo"];
 $nombre = $_POST["txt_nombre"];
@@ -25,4 +25,4 @@ $sql->bind_param(
 $sql->execute();
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=1'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=1'</script>";

@@ -1,18 +1,25 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //Cargar dato
-$id_cliente = $_GET['id'];
-
-$sql = "SELECT * FROM tb_cliente where id_cliente=$id_cliente";
-$result = $con->query($sql); 
-$cliente = mysqli_fetch_assoc($result);
-$id_usuario = $cliente['id_usuario'];
-
-//Iniciamos toda una transaccion para eliminar todos sus datos en cadena
-$con->begin_transaction();
+$id_usuario = $_GET['id'];
+//Primero va buscar si este usuario tiene una cuenta cliente
+$sql = "SELECT * FROM tb_cliente WHERE id_usuario = $id_usuario";
+$result = $con->query($sql);
+if (mysqli_num_rows($result) == 0) {
+    $sql = $con->prepare("DELETE FROM tb_usuario WHERE id_usuario = ?");
+    $sql->bind_param(
+        "s",
+        $id_usuario
+    );
+    $sql->execute();
+} else {
+    //Capturamos el dato del cliente
+    $cliente = mysqli_fetch_assoc($result);
+    //Iniciamos toda una transaccion para eliminar todos sus datos en cadena
+    $con->begin_transaction();
+    $id_cliente = $cliente['id_cliente'];
     try {
-        
         // Eliminar los registros relacionados del cliente
         $sql = $con->prepare("DELETE FROM tb_testimonio WHERE id_cliente = ?");
         $sql->bind_param("s", $id_cliente);
@@ -25,7 +32,6 @@ $con->begin_transaction();
             $sql->bind_param("s", $pedido['id_pedido']);
             $sql->execute();
         }
-        
 
         $sql = $con->prepare("DELETE FROM tb_pedido WHERE id_cliente = ?");
         $sql->bind_param("s", $id_cliente);
@@ -46,14 +52,14 @@ $con->begin_transaction();
         // Confirmar la transacción
         $con->commit();
 
-        echo "Cliente eliminado exitosamente";
+        echo "Usuario eliminado exitosamente";
     } catch (Exception $e) {
         // Deshacer la transacción en caso de error
         $con->rollback();
 
-        echo "Error al eliminar el cliente: " . $e->getMessage();
+        echo "Error al eliminar el usuario: " . $e->getMessage();
     }
-
+}
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=2'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=1'</script>";

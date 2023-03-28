@@ -79,7 +79,7 @@ $result = $con->query($sql);
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>
                             <button onclick="cargarcomponente('./paginas/producto_edit.php?id=<?php echo $productos['id_producto']?>','contenedor_producto')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">
                                 <i class="fas fa-edit fa-lg"></i></button>
-                            <a href="./../back_end/controladores/p_delete_producto.php?id=<?php echo $productos['id_producto']?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
+                            <a href="./../back_end/controladores/producto/p_delete_producto.php?id=<?php echo $productos['id_producto']?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
                                 <i class="fas fa-trash fa-lg"></i>
                             </a>
                         </td>

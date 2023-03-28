@@ -8,7 +8,7 @@ $resultado = $con->query($sql);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL PRODUCT0 ::: AGREGAR DATOS</h1>
-        <form method="POST" action="./../back_end/controladores/p_add_producto.php" enctype="multipart/form-data">
+        <form method="POST" action="./../back_end/controladores/producto/p_add_producto.php" enctype="multipart/form-data">
             <div class="">
                 <label class="">Nombre</label>
                 <div class="">

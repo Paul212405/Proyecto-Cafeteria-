@@ -62,7 +62,7 @@ $result = $con->query($sql);
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>
                             <button onclick="cargarcomponente('./paginas/categoria_edit.php?id=<?php echo $categorias['id_categoria']?>','contenedor_categoria')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">
                                 <i class="fas fa-edit fa-lg"></i></button>
-                            <a href="./../back_end/controladores/p_delete_categoria.php?id=<?php echo $categorias['id_categoria']?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
+                            <a href="./../back_end/controladores/categoria/p_delete_categoria.php?id=<?php echo $categorias['id_categoria']?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
                                 <i class="fas fa-trash fa-lg"></i>
                             </a>
                         </td>

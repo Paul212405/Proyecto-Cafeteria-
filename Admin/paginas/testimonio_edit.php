@@ -14,7 +14,7 @@ $result_producto = $con->query($sql);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL TESTIMONIO ::: MODIFICAR DATOS</h1>
-        <form method="POST" action="./../back_end/controladores/p_edit_testimonio.php">
+        <form method="POST" action="./../back_end/controladores/testimonio/p_edit_testimonio.php">
             <div class="">
                 <label class="">Codigo</label>
                 <div class="">

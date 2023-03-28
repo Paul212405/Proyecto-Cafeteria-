@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //recuperando datos
 $id_categoria = $_POST["txt_categoria"];
 $nombre = $_POST["txt_nombre"];
@@ -19,4 +19,4 @@ $sql->bind_param(
 $sql->execute();
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=5'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=5'</script>";

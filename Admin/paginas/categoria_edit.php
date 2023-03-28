@@ -11,7 +11,7 @@ $row = mysqli_fetch_assoc($result);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL USUARIO ::: MODIFICAR DATOS</h1>
-        <form  method="POST" action="./../back_end/controladores/p_edit_categoria.php">
+        <form  method="POST" action="./../back_end/controladores/categoria/p_edit_categoria.php">
             <div class="">
                 <label class="">Codigo</label>
                 <div class="">

@@ -12,7 +12,7 @@ $row = mysqli_fetch_assoc($result);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL CLIENTE ::: MODIFICAR DATOS</h1>
-        <form  method="POST" action="./../back_end/controladores/p_edit_cliente.php">
+        <form  method="POST" action="./../back_end/controladores/cliente/p_edit_cliente.php">
             <div class="">
                 <label class="">Codigo</label>
                 <div class="">

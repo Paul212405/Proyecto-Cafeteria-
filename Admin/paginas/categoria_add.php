@@ -1,7 +1,7 @@
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DE LA CATEGORIA ::: AGREGAR DATOS</h1>
-        <form method="POST" action="./../back_end/controladores/p_add_categoria.php">
+        <form method="POST" action="./../back_end/controladores/categoria/p_add_categoria.php">
             <div class="">
                 <label class="">Nombre</label>
                 <div class="">

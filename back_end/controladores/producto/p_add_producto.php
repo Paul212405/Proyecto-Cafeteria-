@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //recuperando datos
 $nombre = $_POST["txt_nombre"];
 $descripcion = $_POST["txt_descripcion"];
@@ -14,7 +14,7 @@ $nombre_imagen=$_FILES['imagen']['name'];
 list($n,$e)=explode(".", $nombre_imagen);
 if ($e!='jpg') {
 	// guardar imagen
-	echo "<script>window.location='../../Admin/principal.php?t=4'</script>";
+	echo "<script>window.location='../../../Admin/principal.php?t=4'</script>";
 }
 
 //Tratando datos
@@ -39,8 +39,8 @@ $sql->bind_param(
 $sql->execute();
 //Obtener id del ultimo producto insertado
 $id_producto = $con->insert_id;
-move_uploaded_file($imagen,"../../Public/images/productos/producto_".$id_producto.".jpg");
+move_uploaded_file($imagen,"../../../Public/images/productos/producto_".$id_producto.".jpg");
 $con->commit();
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=4'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=4'</script>";

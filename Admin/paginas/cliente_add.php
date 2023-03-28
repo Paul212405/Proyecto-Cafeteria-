@@ -11,7 +11,7 @@ $resultado = $con->query($sql);
         <?php 
         if(mysqli_num_rows($resultado)>0){
         ?>
-        <form method="POST" action="./../back_end/controladores/p_add_cliente.php">
+        <form method="POST" action="./../back_end/controladores/cliente/p_add_cliente.php">
             <div class="">
                 <label class="">Nombres</label>
                 <div class="">

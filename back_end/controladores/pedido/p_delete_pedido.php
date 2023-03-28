@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //Cargar dato
 $id_pedido = $_GET['id'];
 
@@ -31,4 +31,4 @@ $con->begin_transaction();
 
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=6'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=6'</script>";

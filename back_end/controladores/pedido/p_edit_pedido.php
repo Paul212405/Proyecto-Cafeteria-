@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //recuperando datos
 $id_pedido = $_POST["txt_codigo"];
 $estado = $_POST["estado"];
@@ -32,4 +32,4 @@ if ($estado != "carrito") {
 }
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=6'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=6'</script>";

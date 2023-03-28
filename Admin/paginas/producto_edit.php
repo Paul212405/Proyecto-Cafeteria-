@@ -16,7 +16,7 @@ $resultado = $con->query($sql);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL PRODUCTO ::: MODIFICAR DATOS</h1>
-        <form  method="POST" action="./../back_end/controladores/p_edit_producto.php">
+        <form  method="POST" action="./../back_end/controladores/producto/p_edit_producto.php">
             <div class="">
                 <label class="">Codigo</label>
                 <div class="">

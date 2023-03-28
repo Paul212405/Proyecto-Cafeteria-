@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conexion.php");
-include("../conexion/seguridad.php");
+include("../../conexion/conexion.php");
+include("../../conexion/seguridad.php");
 //recuperando datos
 $testimonio = $_POST["txt_testimonio"];
 $valoracion = $_POST["txt_valoracion"];
@@ -21,4 +21,4 @@ $sql->bind_param(
 $sql->execute();
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
-echo "<script>window.location='../../Admin/principal.php?t=3'</script>";
+echo "<script>window.location='../../../Admin/principal.php?t=3'</script>";

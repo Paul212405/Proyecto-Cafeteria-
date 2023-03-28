@@ -5,33 +5,6 @@ $id_usuario = $_GET['id'];
 $sql = "select * from tb_usuario where id_usuario=$id_usuario";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
-/*$nombre = $row['nombre'];
-$email = $row['email'];
-$fecha_registro = $email['fecha_registro'];
-$rol = $row['tipo'];*/
-
-//Modificar datos
-/*$sql = $con->prepare("UPDATE cliente SET nomb_cliente = ?, apel_cliente = ?, cel_cliente = ?, email_cliente = ?, dni_cliente = ?, direc_cliente = ?, dist_cliente = ? WHERE id_cliente = ?");
-$sql->bind_param(
-    "ssssssss",
-    $nombres,
-    $apellidos,
-    $celular,
-    $email,
-    $dni,
-    $direccion,
-    $distrito,
-    $id_cliente
-);
-$sql->execute();
-$con->close();
-if ($sql) {
-    //mensale de alerta 
-    header("location: edit_cliente.php?cliente=" . $id_cliente . "&resp=OK");
-} else {
-    //mensale de alerta 
-    echo ' <div class="alert alert-danger alert-dismissible fade show"><strong>Error!</strong>   Error: No se Modificaron los datos.<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>';
-}*/
 
 ?>
 
@@ -39,10 +12,10 @@ if ($sql) {
     <div class="lg:ml-72 px-5">
         <div class="flex justify-center items-center mb-4">
             <div class="bg-white rounded-lg shadow-xl grow sm:grow-0 sm:w-2/3">
-                <div class="bg-blue-900 w-full rounded-t-lg py-6 shadow-2xl">
+                <div class="bg-black w-full rounded-t-lg py-6 shadow-2xl">
                     <h1 class="text-center font-semibold text-lg lg:text-xl pb-2 text-white/90">DATOS DEL USUARIO ::: EDITAR DATOS</h1>
                 </div>
-                <form class="px-4 py-5" method="POST" action="./../back_end/controladores/p_edit_usuario.php">
+                <form class="px-4 py-5" method="POST" action="./../back_end/controladores/usuario/p_edit_usuario.php">
                     <div class="w-full block">
                         <label class="text-lg font-semibold pb-4">Codigo</label>
                         <div class="w-full my-4">
@@ -103,10 +76,10 @@ if ($sql) {
                     </div>
                     <div class="w-full flex justify-between items-center mt-3 gap-3">
                         <div class="w-1/2 flex justify-center">
-                            <button type="submit" name="edit" class="w-full px-6 rounded-lg bg-green-800 py-3 text-lg font-bold text-white"><i class="fa fa-save mx-2"></i> Guardar Datos</button>
+                            <button type="submit" name="edit" class="w-full px-6 rounded-lg bg-green-800 py-3 text-sm lg:text-lg font-bold text-white"><i class="fa fa-save mx-2"></i> Guardar Datos</button>
                         </div>
                         <div class="w-1/2 flex justify-center">
-                            <button onclick="cargarcomponente('./paginas/close.php','contenedor_usuario');event.preventDefault();" class="w-full px-6 rounded-lg bg-red-700 py-3 text-lg font-bold text-white"><i class="fa fa-power-off mx-2"></i> Cancelar</button>
+                            <button onclick="cargarcomponente('./paginas/close.php','contenedor_usuario');event.preventDefault();" class="w-full px-6 rounded-lg bg-red-700 py-3 text-sm lg:text-lg font-bold text-white"><i class="fa fa-power-off mx-2"></i> Cancelar</button>
                         </div>
                     </div>
                 </form>
