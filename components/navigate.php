@@ -36,7 +36,7 @@
     <!--Sub menu de logo-->
     <div class="flex py-6 h-20 items-center justify-center flex-grow lg:w-auto  order-2">
       <div class="mr-6">
-        <img src="./Public/images/negocio/logo.png" class="w-18 h-16">
+        <img src="./Public/images/negocio/logo.png" class="w-18 h-16" title="logo de la empresa">
       </div>
     </div>
     <!--Sub menu de boton oculto-->

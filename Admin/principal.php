@@ -1,6 +1,6 @@
 <?php
 //Incluye la variable auth por si ya se logeo un usuario
-include("../back_end/conexion/seguridad.php");
+include("../back_end/conexion/seguridad_admin.php");
 //Pregunta si es admin
 if ($_SESSION['tipo'] != "A") {
     //header("location: ../index.php");
@@ -42,6 +42,21 @@ if (isset($_GET['t'])) {
                     });
                     </script>";
             break;
+        case 5:
+            $_GET['t'];
+            echo "<script>
+                        window.addEventListener('load', function() {
+                            cargarcomponente('./paginas/categoria.php','contenedor_admin')
+                        });
+                        </script>";
+            break;
+        case 6:
+            $_GET['t'];
+            echo "<script>
+                            window.addEventListener('load', function() {
+                                cargarcomponente('./paginas/pedido.php','contenedor_admin')
+                            });
+                            </script>";
     }
 }
 ?>

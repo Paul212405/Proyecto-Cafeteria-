@@ -1,7 +1,8 @@
 <?php
 include("../../back_end/conexion/conexion.php");
+include("../../back_end/conexion/auth.php");
 //Generando la consulta para traer los datos
-$sql = "SELECT * FROM tb_pedido";
+$sql = "SELECT pe.id_pedido,pe.id_cliente,pe.fecha_pedido,pe.total,pe.estado,pe.observaciones,CONCAT(cli.apellidos,'',cli.nombres) as nombre FROM tb_pedido pe inner join tb_cliente cli on cli.id_cliente = pe.id_cliente";
 //Obtener la cantidad de usuarios
 $sqlpag = "select count(*) as total from tb_pedido";
 //Para la paginacion
@@ -26,21 +27,20 @@ $result = $con->query($sql);
         </div>
         <div class="h-full bg-purple-900 text-center flex justify-center items-center p-4 text-xs sm:text-sm lg:text-lg text-white font-bold">
             <div><i class="fas fa-user fa-lg mr-3"></i></div>
-            <p>Paul Mallqui</p>
+            <p><?php echo $_SESSION['nombre_us']?></p>
         </div>
     </div>
     <div class="max-lg:mt-10 lg:mr-14 lg:ml-80 sm:mx-10 transition-all duration-1000">
         <div class="text-right my-4">
-        <button onclick="cargarcomponente('./paginas/pedido_add.php','contenedor_pedido')" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">
-        <i class="fas fa-plus fa-sm"></i> Añadir Pedido
-        </button>
         </div>
         <table class="min-w-full border-collapse block md:table text-sm">
             <thead class="block md:table-header-group">
                 <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative z-0">
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Cliente</th>    
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Fecha Pedido</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Total</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Estado</th>
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Observaciones</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Operaciones</th>
                 </tr>
             </thead>
@@ -49,6 +49,9 @@ $result = $con->query($sql);
                 while ($pedidos = $result->fetch_array()) {
                 ?>
                     <tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Cliente</span>
+                        <?php echo $pedidos['nombre']?>
+                        </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Fecha Pedido</span>
                         <?php echo $pedidos['fecha_pedido']?>
                         </td>
@@ -57,6 +60,9 @@ $result = $con->query($sql);
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Estado</span>
                         <?php echo $pedidos['estado']?>
+                        </td>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Observaciones</span>
+                        <?php echo $pedidos['observaciones']?>
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>

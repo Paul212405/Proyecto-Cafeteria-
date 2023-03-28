@@ -8,11 +8,17 @@ $resultado = $con->query($sql);
 <section class="block">
     <div class="lg:ml-72 px-5">
         <h1 class="text-center">DATOS DEL PRODUCT0 ::: AGREGAR DATOS</h1>
-        <form method="POST" action="./../back_end/controladores/p_add_producto.php">
+        <form method="POST" action="./../back_end/controladores/p_add_producto.php" enctype="multipart/form-data">
             <div class="">
                 <label class="">Nombre</label>
                 <div class="">
                     <input type="text" class="form-control" name="txt_nombre" placeholder="Nombre del producto" required>
+                </div>
+            </div>
+            <div class="">
+                <label class="">Imagen</label>
+                <div class="">
+                    <input type="file" class="form-control" name="imagen" required>
                 </div>
             </div>
             <div class="">

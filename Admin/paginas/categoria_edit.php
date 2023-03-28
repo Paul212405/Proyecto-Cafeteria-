@@ -15,7 +15,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="">
                 <label class="">Codigo</label>
                 <div class="">
-                    <input type="text" name="txt_codigo" class="form-control"  value="<?php echo $id_categoria ?>">
+                    <input type="text" name="txt_categoria" class="form-control"  value="<?php echo $id_categoria ?>">
                 </div>
             </div>
             <div class="">

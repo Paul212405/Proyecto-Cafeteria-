@@ -25,6 +25,7 @@ if ($existeUsuario <= 0) {
         //Se crea las variables de session de id usario y su tipo
         $_SESSION["usuario"] = $idusuario;
         $_SESSION["tipo"] = $tipousuario;
+        $_SESSION["nombre_us"] = $usuario;
 
         //Y una varaible que nos permite saber si estamos logeados
         $_SESSION["auth"] = 1;

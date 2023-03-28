@@ -1,5 +1,6 @@
 <?php
 include("../../back_end/conexion/conexion.php");
+include("../../back_end/conexion/auth.php");
 //Generando la consulta para traer los datos
 $sql = "SELECT po.id_producto,po.nombre,po.descripcion,po.precio,po.stock,po.estado,ca.nombre as categoria FROM tb_producto po inner join tb_categoria ca on po.id_categoria = ca.id_categoria";
 //Obtener la cantidad de usuarios
@@ -26,7 +27,7 @@ $result = $con->query($sql);
         </div>
         <div class="h-full bg-purple-900 text-center flex justify-center items-center p-4 text-xs sm:text-sm lg:text-lg text-white font-bold">
             <div><i class="fas fa-user fa-lg mr-3"></i></div>
-            <p>Paul Mallqui</p>
+            <p><?php echo $_SESSION['nombre_us']?></p>
         </div>
     </div>
     <div class="max-lg:mt-10 lg:mr-14 lg:ml-80 sm:mx-10 transition-all duration-1000">
@@ -38,7 +39,8 @@ $result = $con->query($sql);
         <table class="min-w-full border-collapse block md:table text-sm">
             <thead class="block md:table-header-group">
                 <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative z-0">
-                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Nombre</th>
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Producto</th>
+                    <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Vista</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Descripcion</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Precio</th>
                     <th class="bg-black p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Stock</th>
@@ -52,10 +54,13 @@ $result = $con->query($sql);
                 while ($productos = $result->fetch_array()) {
                 ?>
                     <tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
-                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nombre</span>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Producto</span>
                         <?php echo $productos['nombre']?>
                         </td>
-                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Descripción</span>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block md:hidden font-bold">Vista</span>
+                        <img src="../Public/images/productos/producto_<?php echo $productos['id_producto'] ?>.jpg" class="w-16 h-16">
+                        </td>
+                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block md:hidden font-bold">Descripción</span>
                         <?php echo $productos['descripcion']?>
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Precio</span>

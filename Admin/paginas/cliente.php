@@ -1,5 +1,6 @@
 <?php
 include("../../back_end/conexion/conexion.php");
+include("../../back_end/conexion/auth.php");
 //Generando la consulta para traer los datos
 $sql = "SELECT * FROM tb_cliente";
 //Obtener la cantidad de usuarios
@@ -27,7 +28,7 @@ $result = $con->query($sql);
         </div>
         <div class="h-full bg-purple-900 text-center flex justify-center items-center p-4 text-xs sm:text-sm lg:text-lg text-white font-bold">
             <div><i class="fas fa-user fa-lg mr-3"></i></div>
-            <p>Paul Mallqui</p>
+            <p><?php echo $_SESSION['nombre_us']?></p>
         </div>
     </div>
     <div class="max-lg:mt-10 lg:mr-14 lg:ml-80 sm:mx-10 transition-all duration-1000">

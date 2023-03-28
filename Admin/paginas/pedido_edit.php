@@ -19,16 +19,26 @@ $row = mysqli_fetch_assoc($result);
                 </div>
             </div>
             <div class="">
-                <label class="">Total</label>
+                <label class="">Estado</label>
                 <div class="">
-                    <input type="text" class="form-control" name="txt_total" placeholder="Total" value="<?php echo $row['total']; ?>">
+                    <select name="estado" id="">
+                        <option value="carrito" <?php if($row['estado'] == "carrito"){echo "selected";}?>>
+                            En carrito
+                        </option>
+                        <option value="finalizado" <?php if($row['estado'] == "finalizado"){echo "selected";}?>>
+                            Finalizado y enviado
+                        </option>
+                        <option value="recibido" <?php if($row['estado'] == "recibido"){echo "selected";}?>>
+                            Entregado y pagado
+                        </option>
+                    </select>
                 </div>
             </div>
             <div class="">
-                <label class="">Estado</label>
+                <label class="">Observaciones</label>
                 <div class="">
-                    <input type="text" class="form-control" name="txt_estado" placeholder="Estado" value="<?php echo $row['estado']; ?>">
-                </div>
+                    <textarea type="textarea" cols="20" rows="3" class="form-control" name="txa_observaciones" placeholder="observaciones" required></textarea>
+                </div> 
             </div>
             
             <div class="">

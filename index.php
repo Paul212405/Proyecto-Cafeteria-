@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 //Incluye la variable auth por si ya se logeo un usuario
 include_once("utils/auth.php");
@@ -13,7 +15,6 @@ $sql = "SELECT te.testimonio,MAX(te.valoracion) as valoracion ,CONCAT(cli.apelli
 $resultado = $con->query($sql);
 $testimonios = $resultado->fetch_array();
 ?>
-
 <body class="bg-black overflow-x-hidden">
     <!--Div creado para posicionar los elementos en altura Z-->
     <div class="relative" >
@@ -217,3 +218,4 @@ $testimonios = $resultado->fetch_array();
 
 </body>
 <?php include("components/footer.php") ?>
+</html>
