@@ -47,6 +47,13 @@ if (isset($_GET['t'])) {
 ?>
 <script src="./js/interfaz_admin.js"></script>
 
+<script>
+    //Evento que se activa al cargar la pagina
+    window.addEventListener('load', function() {
+        cargarcomponente('./paginas/resumen.php','contenedor_admin')
+    });
+</script>
+
 <body class="bg-slate-200 ">
     <div class="block lg:flex justify-start items-start absolute top-0 left-0 right-0">
         <?php include("components/navigate.php"); ?>
