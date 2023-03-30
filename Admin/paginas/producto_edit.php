@@ -20,7 +20,7 @@ $resultado = $con->query($sql);
                 <div class="bg-black w-full rounded-t-lg py-6 shadow-2xl">
                     <h1 class="text-center font-semibold text-lg lg:text-xl pb-2 text-white/90">DATOS DEL PRODUCTO ::: MODIFICAR DATOS</h1>
                 </div>
-                <form class="px-4 py-5" method="POST" action="./../back_end/controladores/producto/p_edit_producto.php">
+                <form class="px-4 py-5" method="POST" action="./../back_end/controladores/producto/p_edit_producto.php" enctype="multipart/form-data">
                     <div class="w-full block">
                         <label class="text-lg font-semibold pb-4">Codigo</label>
                         <div class="w-full my-4">
@@ -31,6 +31,12 @@ $resultado = $con->query($sql);
                         <label class="text-lg font-semibold pb-4">Nombre</label>
                         <div class="w-full my-4">
                             <input type="text" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_nombre" placeholder="Nombre" value="<?php echo $row['nombre']; ?>">
+                        </div>
+                    </div>
+                    <div class="w-full block">
+                        <label class="text-lg font-semibold pb-4">Imagen</label>
+                        <div class="w-full my-4">
+                            <input type="file" class="w-full h-9 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="imagen" required>
                         </div>
                     </div>
                     <div class="w-full block">

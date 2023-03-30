@@ -367,23 +367,6 @@ include_once("utils/head.php");
             </div>
         </div>
     </div>
-    <!--
-    <div class="mx-2 sm:mx-4 transition-all duration-700 my-4">
-        <div class="flex justify-center items-center">
-            <p class="font-bold text-3xl">¿Quienes somos los dos?</p>
-        </div>
-        <div class="transition-all duration-700 grid grid-cols-1 sm:grid-cols-2 p-4">
-            <div class="transition-all duration-700 max-sm:flex hidden lg:flex lg col-span-1 px-24 items-center justify-center">
-                <img class="transition-all duration-700 object-cover w-full rounded-lg" src="./Public/images/negocio/nosotros/pareja.jpg" alt="image del perfil del miembro del proyecto">
-            </div>
-            <div class="max-sm:col-span-1 col-span-2 lg:col-span-1 transition-all duration-700">
-                <div class="block px-4 py-16">
-                    <p class="text-lg leading-10 font-normal my-4">
-                        Ademas de dos grandes estudiantes y futuros profesionales, nos hemos formado como una pareja que en la responsabilidad y en el dia a dia nos enamoramos y ahora formamos una etapa unica en nuestras vidas, anhelando las mismas metas y objetivos, incluso en las distintas nos apoyamos en lo que otro quiere lograr, somos y siempre seremos uno <b> P y C Foverer 🧡🧡🧡</b>.
-                    </p>
-                </div>
-            </div>
-        </div>-->
     </div>
 </body>
 <?php include("components/footer.php") ?>

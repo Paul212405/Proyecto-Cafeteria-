@@ -15,6 +15,14 @@ $descripcion = trim($descripcion);
 $precio = trim($precio);
 $stock = trim($stock);
 $estado = trim($estado);
+//Imagen
+$imagen=$_FILES['imagen']['tmp_name'];
+$nombre_imagen=$_FILES['imagen']['name'];
+list($n,$e)=explode(".", $nombre_imagen);
+if ($e!='jpg') {
+	// guardar imagen
+	echo "<script>window.location='../../../Admin/principal.php?t=4'</script>";
+}
 //Consulta para los datos personales del cliente
 $sql = $con->prepare("UPDATE tb_producto SET nombre = ?, descripcion = ?, precio = ?, stock = ?, estado = ?, id_categoria = ? WHERE id_producto = ?");
 $sql->bind_param(
@@ -28,6 +36,7 @@ $sql->bind_param(
     $id_producto
 );
 $sql->execute();
+move_uploaded_file($imagen,"../../../Public/images/productos/producto_".$id_producto.".jpg");
 $con->close();
 //header("location: ../../Admin/principal.php?t=1");
 echo "<script>window.location='../../../Admin/principal.php?t=4'</script>";
