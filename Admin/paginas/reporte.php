@@ -8,7 +8,7 @@
                         <i class="fas fa-user "></i>
                     </div>
                     <a href="./../back_end/controladores/reportes/reporte_usuario.php" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
-                        Generar Reporte
+                        Generar Reporte 
                     </a>
                 </div>
             </div>

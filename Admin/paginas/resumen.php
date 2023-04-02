@@ -9,9 +9,10 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/usuario1.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2">
-                            <button onclick="cargarcomponente('./paginas/usuario.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/usuario.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
+                
                     </div>
                 </div>
                 <div class="col-span-1 w-full">
@@ -20,9 +21,9 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/cliente1.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2">
-                            <button onclick="cargarcomponente('./paginas/cliente.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/cliente.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
                     </div>
                 </div>
                 <div class="col-span-1 w-full">
@@ -31,9 +32,9 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/testimonio1.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2 ">
-                            <button onclick="cargarcomponente('./paginas/testimonio.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/testimonio.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
                     </div>
                 </div>
                 <div class="col-span-1 w-full">
@@ -42,9 +43,9 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/productos1.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2">
-                            <button onclick="cargarcomponente('./paginas/producto.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/producto.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
                     </div>
                 </div>
                 <div class="col-span-1 w-full">
@@ -53,9 +54,9 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/categoria2.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2">
-                            <button onclick="cargarcomponente('./paginas/categoria.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/categoria.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
                     </div>
                 </div>
                 <div class="col-span-1 w-full">
@@ -64,9 +65,9 @@
                         <div class="w-full px-4">
                             <img class="w-full h-40" src="../Public/images/negocio/pedido1.png" />
                         </div>
-                        <div class="flex justify-center items-center w-full text-center p-2">
-                            <button onclick="cargarcomponente('./paginas/pedido.php','contenedor_admin')" class="text-center inline-block w-full px-4 py-2 rounded hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-white ">MÁS INFO +</button>
-                        </div>
+                        <button onclick="cargarcomponente('./paginas/pedido.php','contenedor_admin')" class="px-6 py-4 bg-black font-bold text-slate-100 w-2/3 rounded-xl text-sm text-center hover:bg-black/80 transition-all duration-500">
+                            MÁS INFO +
+                        </button>
                     </div>
                 </div>
             </div>
