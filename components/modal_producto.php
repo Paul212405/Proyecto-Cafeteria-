@@ -91,7 +91,7 @@ $categoria = $result->fetch_array();
                 <p class="text-5xl font-bold text-start text-blue-800 my-4">
                     <?php echo $producto['precio'] ?></p>
                 <p class="text-left text-xl mb-4 font-semibold">
-                    <?php echo $producto['stock'] ?> unidades
+                    <?php if($producto['stock']<0){echo 0;}else{echo $producto['stock'];} ?> unidades
                 </p>
                 <form id="form_modal">
                 <div class="flex justify-start items-center gap-5 mx-auto">
