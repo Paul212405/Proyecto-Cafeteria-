@@ -50,7 +50,7 @@ $row = mysqli_fetch_assoc($result);
                     <div class="w-full block">
                         <label class="text-lg font-semibold pb-4">Celular</label>
                         <div class="w-full my-4">
-                            <input type="text" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_celular" placeholder="Celular" value="<?php echo $row['celular']; ?>">
+                            <input type="text" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_celular" maxlength="9" placeholder="Celular" value="<?php echo $row['celular']; ?>">
                         </div>
                     </div>
                     <div class="w-full flex justify-between items-center mt-3 gap-2">

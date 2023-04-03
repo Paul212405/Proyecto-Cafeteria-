@@ -68,7 +68,7 @@ include("../back_end/controladores/p_productos.php");
                     <input type="hidden" name="precio" value="<?php echo $productos['precio']?>">
                     <div class="h-12 w-auto mr-5 mb-3"> 
                         <div class="flex h-10 w-32 bg-transparent mt-1">
-                            <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
+                            <input id="contador" type="number" min="0" max="<?php echo $productos['stock']?>" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0">
                         </div>
                     </div>
                     <button class="bg-yellow-400 w-32 h-12 px-4 py-2 mb-3 rounded-lg">

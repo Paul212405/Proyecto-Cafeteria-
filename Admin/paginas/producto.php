@@ -66,7 +66,7 @@ $result = $con->query($sql);
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Precio</span>
                         <?php echo $productos['precio']?>
                         </td>
-                        <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Stock</span>
+                        <td class="<?php if($productos['stock']<=0){echo 'text-red-800 font-bold text-lg';}?> p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Stock</span>
                         <?php echo $productos['stock'] ?>
                         </td>
                         <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Estado</span>

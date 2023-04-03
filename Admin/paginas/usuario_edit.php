@@ -29,15 +29,15 @@ $row = mysqli_fetch_assoc($result);
                         </div>
                     </div>
                     <div class="w-full block">
-                        <label class="text-lg font-semibold pb-4">Email</label>
+                        <label class="text-lg font-semibold pb-4">Contraseña</label>
                         <div class="w-full my-4">
-                            <input type="email" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_email" placeholder="Correo electronico" value="<?php echo $row['email']; ?>" required>
+                            <input type="password" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_pass" placeholder="Contraseña" value="<?php echo $row['password']; ?>" required>
                         </div>
                     </div>
                     <div class="w-full block">
-                        <label class="text-lg font-semibold pb-4">Fecha Registro</label>
+                        <label class="text-lg font-semibold pb-4">Email</label>
                         <div class="w-full my-4">
-                            <input type="date" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="fecha" value="<?php echo $row['fecha_registro']; ?>">
+                            <input type="email" class="w-full h-8 p-5 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="txt_email" placeholder="Correo electronico" value="<?php echo $row['email']; ?>" required>
                         </div>
                     </div>
                     <div class="w-full block">

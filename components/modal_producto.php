@@ -100,7 +100,7 @@ $categoria = $result->fetch_array();
                     <input type="hidden" name="precio" value="<?php echo  $producto['precio']?>"> 
                     <div class="h-12 w-24">
                         <div class="flex h-10 w-24 bg-transparent mt-1">
-                            <input id="contador" type="number" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0"></input>
+                            <input id="contador" type="number" min="0" max="<?php echo $producto['stock']?>" class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black text-gray-700 rounded-sm" name="txt_cantidad" value="0">
                         </div>
                     </div>
                     <input type="submit" class="bg-blue-900 cursor-pointer text-white w-32 h-12 px-4 py-2 rounded-lg" value="Añadir">
