@@ -1,6 +1,6 @@
 <?php
 include("../../back_end/conexion/conexion.php");
-//Los clientes
+//Los clientes 
 $sql = "SELECT id_cliente,CONCAT(apellidos,' ',nombres) as nombre FROM tb_cliente";
 $result_cliente = $con->query($sql);
 //Los productos
