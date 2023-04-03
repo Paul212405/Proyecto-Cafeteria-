@@ -36,7 +36,7 @@ $resultado = $con->query($sql);
                     <div class="w-full block">
                         <label class="text-lg font-semibold pb-4">Imagen</label>
                         <div class="w-full my-4">
-                            <input type="file" class="w-full h-9 font-light border-2 border-black/10 rounded-lg focus:border-black/80 focus:outline-none transition-all duration-500" name="imagen" required>
+                            <input type="file" name="imagen" required>
                         </div>
                     </div>
                     <div class="w-full block">
