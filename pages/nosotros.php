@@ -12,7 +12,7 @@ include_once("utils/head.php");
             <div class="max-sm:col-span-1 col-span-2 lg:col-span-1 transition-all duration-700">
                 <div class="block px-4 py-16">
                     <p class="font-bold font-mono text-2xl lg:text-4xl leading-[50px] transition-all duration-700">
-                        Soy Mallqui, soy un gran programador y diseñador de alto valor</p>
+                        Soy Paul Mallqui, soy un gran programador y diseñador de alto valor</p>
                     <p class="text-lg leading-10 font-normal my-4">
                         Soy estudiante de Ingenieria de Sistemas en la UNJFSC, lleve una media beca en SENATI y me desempeño muy bien diseñador front-end y desallorador back-end en las distintas tecnologias, soy una persona con valores y de muy buena comunicacion cuando se trata de trabajar en equipo y solucionar problemas.
                     </p>
@@ -158,9 +158,11 @@ include_once("utils/head.php");
             <div class="max-sm:col-span-1 col-span-2 lg:col-span-1 transition-all duration-700">
                 <div class="block px-4 py-16">
                     <p class="font-bold font-mono text-2xl lg:text-4xl leading-[50px] transition-all duration-700">
-                        Soy Camila, soy una diseñadora de paginas web y persona de retos</p>
+                        Soy Camila Morales, soy una diseñadora de páginas web y una persona de retos</p>
                     <p class="text-lg leading-10 font-normal my-4">
-                        Tu perfil como persona y profesional.
+                        Soy estudiante de la carrera de Ingeniería de Sistemas en la UNJFSC, mi ámbito de desarrollo es la gestión de proyectos puesto que soy una persona que sabe como llegar a lo demás,
+                        actualmente tengo el cargo de Subpresidenta de la Comunidad Estudiantil CITT, y Consejera estudiantil de mi facultad de estudios.
+                        Soy alguien que asume retos sean los que sean, y aunque la programación no es mi gran fuerte me empeño cada día a seguir mejorando.
                     </p>
                 </div>
             </div>
@@ -180,19 +182,6 @@ include_once("utils/head.php");
                         <div class="absolute px-4 inset-0 flex translate-y-[90%] flex-col items-center justify-center text-center transition-all duration-500 group-hover:translate-y-0">
                             <h1 class="font-dmserif text-2xl font-bold text-white">Desarrollo Front end</h1>
                             <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Diseño de interfaces para clientes.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-1 w-full bg-slate-50 rounded-b-md shadow-lg">
-                    <!--Tarjeta de categoria-->
-                    <div class="w-full group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
-                        <div class="h-56 lg:h-64 w-full transition-all duration-700">
-                            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./Public/images/negocio/nosotros/talento_2.jpg" />
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                        <div class="absolute px-4 inset-0 flex translate-y-[90%] flex-col items-center justify-center text-center transition-all duration-500 group-hover:translate-y-0">
-                            <h1 class="font-dmserif text-2xl font-bold text-white">Desarrollo Back end</h1>
-                            <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Diseño de flujos y conexion con bd y apis.</p>
                         </div>
                     </div>
                 </div>
@@ -262,36 +251,13 @@ include_once("utils/head.php");
                     SQL y MYSQL
                 </p>
             </div>
-            <div class="block text-center">
-                <div class="flex justify-center items-center w-full">
-                    <img src="./Public/images/negocio/nosotros/c10.png" class="w-16 h-16 hover:w-20 hover:h-20 transition-all duration-700 hover:shadow-2xl mb-4 object-cover rounded-full">
-                </div>
-                <p class="text-center text-2xl">
-                    React.js
-                </p>
-            </div>
+
             <div class="block text-center">
                 <div class="flex justify-center items-center w-full">
                     <img src="./Public/images/negocio/nosotros/c13.png" class="w-16 h-16 hover:w-20 hover:h-20 transition-all duration-700 hover:shadow-2xl mb-4 object-cover rounded-full">
                 </div>
                 <p class="text-center text-2xl">
                     PHP
-                </p>
-            </div>
-            <div class="block text-center">
-                <div class="flex justify-center items-center w-full">
-                    <img src="./Public/images/negocio/nosotros/c20.png" class="w-16 h-16 hover:w-20 hover:h-20 transition-all duration-700 hover:shadow-2xl mb-4 object-cover rounded-full">
-                </div>
-                <p class="text-center text-2xl">
-                    Tailwind Css
-                </p>
-            </div>
-            <div class="block text-center">
-                <div class="flex justify-center items-center w-full">
-                    <img src="./Public/images/negocio/nosotros/c18.png" class="w-16 h-16 hover:w-20 hover:h-20 transition-all duration-700 hover:shadow-2xl mb-4 object-cover rounded-full">
-                </div>
-                <p class="text-center text-2xl">
-                    Photoshop
                 </p>
             </div>
         </div>
