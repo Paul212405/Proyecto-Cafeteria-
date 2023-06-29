@@ -1,3 +1,3 @@
 # Proyecto-Cafeteria-
-# Desarrollado con Php, Js, Html y Css
-# Aplicacion Full stack para el manejo de operaciones de una cafeteria 
+<p>Desarrollado con Php, Js, Html y Css</p>
+<h2>Aplicacion Full stack para el manejo de operaciones basicas y panel de dashboard admin de una cafeteria</h2>
