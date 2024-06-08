@@ -2,7 +2,7 @@
 
 Bienvenido a nuestra aplicación de Gestión de Cafetería. Este proyecto está desarrollado en PHP, CSS y JavaScript, utilizando Tailwind CSS a través de una CDN para el diseño y estilos. La aplicación está desplegada en la siguiente URL:
 
-[**URL de la Aplicación Desplegada**](cafeteria-pyc.000webhostapp.com/)
+[**URL de la Aplicación Desplegada**](https://cafeteria-pyc.000webhostapp.com/)
 
 ## Descripción
 
